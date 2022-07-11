@@ -1,0 +1,17 @@
+.icon {
+  width: 30px;
+  height: 19px;
+  cursor: pointer;
+}
+
+.icon span {
+  width: var(--width);
+  height: 2px;
+  background-color: black;
+  transition: 0.5s ease width;
+}
+
+.icon:hover span,
+.icon span.active {
+  width: 100%;
+}

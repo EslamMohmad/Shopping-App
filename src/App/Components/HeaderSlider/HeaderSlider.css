@@ -1,0 +1,25 @@
+.swiper-pagination .swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  opacity: 1;
+  box-shadow: 0 0 5px lightgray;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  transition-property: background-color, width, box-shadow, border-radius;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active {
+  width: 25px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.headerSlider {
+  margin-top: 95px;
+}
+
+.headerSlider .swiper-container {
+  min-height: 150px;
+}

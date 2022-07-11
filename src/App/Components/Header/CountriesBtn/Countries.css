@@ -1,0 +1,42 @@
+.countries button {
+  width: 140px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: transparent;
+}
+
+.countryInfo {
+  overflow: hidden;
+}
+
+.countryInfo img {
+  height: auto;
+  object-fit: cover;
+}
+
+.countryInfo span {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline-block;
+  width: 60px;
+}
+
+.countryList {
+  width: 140px;
+  position: absolute;
+  bottom: -170px;
+  left: 0;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.countryList ul li:hover {
+  background-color: #e7e7e7;
+  cursor: pointer;
+}

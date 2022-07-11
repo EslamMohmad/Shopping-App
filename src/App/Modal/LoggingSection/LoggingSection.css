@@ -1,0 +1,117 @@
+.overLay .logging {
+  position: relative;
+  width: 500px;
+  max-width: 500px;
+  max-height: 100%;
+  background-color: white;
+  border-radius: 10px;
+  transform: scale(0.9);
+  transform-origin: 50% 50%;
+  visibility: hidden;
+  overflow-y: auto;
+  transition: 0.5s ease transform;
+  transition-property: transform;
+}
+
+.overLay .logging .parent {
+  padding: 30px;
+  max-height: 644px;
+}
+
+.overLay .logging .formInput {
+  padding: 12px 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+
+.overLay .logging .formInput:focus {
+  box-shadow: none;
+  border-color: black;
+}
+
+.overLay .logging .rememberMe {
+  position: relative;
+}
+
+.overLay .logging .rememberMe input {
+  position: absolute;
+  top: 25%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  width: 50px;
+  height: 25px;
+}
+
+.overLay .logging .rememberMe .check {
+  width: 50px;
+  height: 25px;
+  border-radius: 20px;
+  background-color: lightgray;
+  position: relative;
+  padding: 0 3px;
+  transition: 0.5s ease background-color;
+}
+
+.overLay .logging .rememberMe .check.active {
+  background-color: black;
+}
+
+.overLay .logging .rememberMe .check span {
+  width: 17.5px;
+  height: 17.5px;
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.5s ease left;
+}
+
+.overLay .logging .rememberMe .check .active {
+  left: 55%;
+}
+
+.overLay .logging .forgot a {
+  color: black;
+}
+
+.overLay .logging .logBtn {
+  width: 100%;
+  padding: 10px 0;
+  transition: 0.3s ease opacity;
+}
+
+.overLay .logging .logBtn:focus {
+  box-shadow: none;
+  border-color: none;
+}
+
+.overLay .logging .logBtn:hover {
+  opacity: 0.92;
+}
+
+.overLay .logging .or {
+  position: relative;
+}
+
+.overLay .logging .or span {
+  text-align: center;
+  font-weight: bold;
+  width: 50px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overLay .logging .logBtn.facebook {
+  background-color: #4267b2;
+}
+
+.overLay .logging .logBtn.google {
+  background-color: #4285f4;
+}

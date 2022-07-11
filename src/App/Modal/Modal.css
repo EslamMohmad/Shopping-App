@@ -1,0 +1,33 @@
+.aside {
+  position: absolute;
+  top: 0;
+  width: 450px;
+  height: 100%;
+  background-color: white;
+  transition: 0.3s ease;
+  transition-property: left, right;
+  transition-delay: 0s;
+  overflow-y: auto;
+}
+
+.aside.menuSection {
+  left: -450px;
+}
+
+.aside.cartSection {
+  right: -450px;
+}
+
+@media (max-width: 460px) {
+  .aside {
+    width: 100%;
+  }
+
+  .aside.menuSection {
+    left: -100%;
+  }
+
+  .aside.cartSection {
+    right: -100%;
+  }
+}

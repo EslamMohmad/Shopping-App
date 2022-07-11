@@ -1,0 +1,12 @@
+.memberChat-section .text p {
+  max-width: 500px;
+  margin: auto;
+  color: gray;
+  padding: 0 20px;
+}
+
+@media (max-width: 576px) {
+  .memberChat-section .text p {
+    font-size: 12px;
+  }
+}

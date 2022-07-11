@@ -1,0 +1,31 @@
+.swiper-button-prev,
+.swiper-button-next {
+  color: black;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 5px 5px lightgray;
+  transform: translateY(-50%);
+  margin-top: auto;
+}
+
+.swiper-button-prev {
+  left: 0px;
+}
+
+.swiper-button-next {
+  right: 0px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.swiper-slide {
+  cursor: pointer;
+}

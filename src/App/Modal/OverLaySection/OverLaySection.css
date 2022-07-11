@@ -1,0 +1,55 @@
+.overLay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  transition-property: opacity, visibility;
+  transition-delay: 0.2s;
+}
+
+.overLay[status="overLayState menuState"],
+.overLay[status="overLayState cartState"],
+.overLay[status="loggingState overLayState"],
+.overLay[status="searchState overLayState"] {
+  transition-delay: 0;
+}
+
+.overLay[status="loggingState overLayState"],
+.overLay[status="overLayState productInfoState"] {
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.overLay[status="searchState overLayState"] {
+  justify-content: center;
+  padding: 20px;
+}
+
+.overLay[status="overLayState menuState"] .aside.menuSection {
+  transition-delay: 0.4s;
+  left: 0;
+}
+
+.overLay[status="overLayState cartState"] .aside.cartSection {
+  right: 0;
+  transition-delay: 0.4s;
+}
+
+.overLay.active {
+  transition-delay: 0s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.overLay[status="loggingState overLayState"] .logging {
+  transform: scale(1);
+  visibility: visible;
+}

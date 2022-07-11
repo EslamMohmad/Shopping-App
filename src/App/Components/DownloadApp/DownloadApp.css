@@ -1,0 +1,65 @@
+.downloadSection .content h1 {
+  font-size: 30px;
+}
+
+.downloadSection .content p {
+  font-size: 50px;
+}
+
+.downloadSection .icons .appIcon:hover {
+  opacity: 0.8;
+}
+
+.downloadSection .img {
+  max-width: 400px;
+}
+
+@media (max-width: 1400px) {
+  .downloadSection .content h1 {
+    font-size: 25px;
+  }
+
+  .downloadSection .content p {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .downloadSection .content h1 {
+    font-size: 2vh;
+  }
+
+  .downloadSection .content p {
+    font-size: 3vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .downloadSection .row {
+    padding-top: 0px !important;
+  }
+
+  .downloadSection .content {
+    order: 2;
+    text-align: center;
+    width: 85%;
+  }
+
+  .downloadSection .content p {
+    font-size: 2vh;
+  }
+
+  .downloadSection .content .icons {
+    justify-content: center;
+  }
+
+  .downloadSection .content img {
+    max-width: 150px;
+  }
+
+  .downloadSection .img {
+    order: 1;
+    max-width: 200px;
+    margin-bottom: 3rem;
+  }
+}

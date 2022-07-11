@@ -1,0 +1,17 @@
+.addCart {
+  position: relative;
+}
+
+.addCart span {
+  position: absolute;
+  right: -14px;
+  top: -14px;
+  color: white;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 10px;
+}
