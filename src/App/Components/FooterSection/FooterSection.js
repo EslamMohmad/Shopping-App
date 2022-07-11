@@ -34,7 +34,7 @@ const FooterSection = () => {
     ],
     contact: [
       "contact us",
-      "eslammohmad@gamil.com",
+      "eslammohmad@gmail.com",
       "eslam@outlook.com",
       "call us : +1 123 546 789",
     ],
