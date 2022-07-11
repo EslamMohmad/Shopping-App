@@ -29,7 +29,7 @@ const CountriesBtn = () => {
     },
     {
       country: "Spain",
-      language: "deutsch-deu",
+      language: "spanish-sp",
       flagSrc: spain,
     },
     {
