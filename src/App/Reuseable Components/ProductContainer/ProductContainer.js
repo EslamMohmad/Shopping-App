@@ -6,7 +6,7 @@ import "./ProductContainer.css";
 
 const ProductContainer = ({ name, payload, thunkFunc, action }) => {
   useEffect(() => {
-    action(thunkFunc());
+    action(thunkFunc(false));
   }, [thunkFunc, action]);
 
   const dataHandler = () => {

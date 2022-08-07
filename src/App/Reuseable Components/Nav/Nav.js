@@ -1,6 +1,7 @@
 import React from "react";
 
 import Icon from "../../Reuseable Components/Icon/Icon";
+import BackToHome from "../BackToHome/BackToHome";
 
 import "./Nav.css";
 
@@ -71,13 +72,13 @@ const Nav = ({ cls }) => {
     >
       <li className="navItem">
         <p className="mb-0 d-flex justify-content-between align-items-center h-100">
-          home
+          <BackToHome>home</BackToHome>
         </p>
         <span></span>
       </li>
       <li className="navItem">
         <p className="mb-0 d-flex justify-content-between align-items-center h-100">
-          <span className="me-1">men wear</span>{" "}
+          <span className="me-1">men wear</span>
           <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
         </p>
         <div className="bar d-none d-lg-block">
@@ -87,7 +88,7 @@ const Nav = ({ cls }) => {
       </li>
       <li className="navItem">
         <p className="mb-0 d-flex justify-content-between align-items-center h-100">
-          <span className="me-1">women wear</span>{" "}
+          <span className="me-1">women wear</span>
           <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
         </p>
         <div className="bar d-none d-lg-block">

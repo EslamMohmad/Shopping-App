@@ -34,7 +34,7 @@ const TopBrandsSlider = () => {
   };
 
   return (
-    <div className="topBrandsSection">
+    <div className="topBrandsSection px-0">
       <h2 className="fw-bold mb-5">top brands</h2>
       <SwiperContainer
         space={30}

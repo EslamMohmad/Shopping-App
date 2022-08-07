@@ -1,5 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
+import { overLayFunc } from "./ModalSlice";
+
 export const getSearchResults = createAsyncThunk(
   "search/searchData",
   async (_, thunkAPI) => {
@@ -36,6 +38,10 @@ const searchSlice = createSlice({
     },
     [getSearchResults.rejected]: (state, { payload }) => {
       console.log("error");
+    },
+
+    [overLayFunc]: (state, { payload }) => {
+      state.inputValue = "";
     },
   },
 });

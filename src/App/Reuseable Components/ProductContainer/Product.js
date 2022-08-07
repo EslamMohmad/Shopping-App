@@ -1,11 +1,13 @@
 import React from "react";
-import { productInfoFunc } from "../../Store/ModalSlice";
+import { productInfoFunc, scrollToElement } from "../../Store/ModalSlice";
 
 const Product = ({ product, action, name }) => {
   return (
     <div
       className="product rounded overflow-hidden"
-      onClick={() => action(productInfoFunc({ product, name }))}
+      onClick={(e) => {
+        action(productInfoFunc({ product, name }));
+      }}
     >
       <img
         src={require(`../../Components/Products/${product.img}`)}

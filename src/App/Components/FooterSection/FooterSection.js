@@ -72,7 +72,7 @@ const FooterSection = () => {
       <div className="row mx-0 py-3 py-lg-5">
         <SubscribeSection />
       </div>
-      <div className="py-3 py-lg-5 row flex-nowrap mx-0 siteMap justify-content-evenly">
+      <div className="py-3 py-lg-5 row flex-nowrap mx-0 siteMap justify-content-between">
         {listsRender()}
       </div>
       <div className="copyright border-top py-3 py-lg-2 d-flex justify-content-between align-items-center">

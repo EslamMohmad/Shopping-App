@@ -73,10 +73,10 @@ const TopBrandsSection = () => {
       <div className="row mx-0 mb-5">
         <TopBrandsSlider />
       </div>
-      <div className="row mx-0 flex-nowrap max justify-content-between mb-5">
-        {sectionRender(bigImgsArr, 1)}
+      <div className="row mx-0 gap-3 flex-nowrap max justify-content-between mb-5">
+        {sectionRender(bigImgsArr, 0)}
       </div>
-      <div className="row min border rounded overflow-hidden">
+      <div className="row mx-0 min border rounded overflow-hidden">
         {sectionRender(smallImgsArr, 0)}
       </div>
     </div>

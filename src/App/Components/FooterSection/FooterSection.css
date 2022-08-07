@@ -48,18 +48,11 @@
   .siteMap {
     flex-wrap: wrap !important;
     justify-content: stretch !important;
-    margin: 0 2rem !important;
   }
 
   .siteMap .section {
     min-width: 200px;
     margin-bottom: 30px;
-  }
-}
-
-@media (max-width: 895px) {
-  .siteMap {
-    justify-content: space-around !important;
   }
 }
 

@@ -1,5 +1,5 @@
 .topBrandsSection .max .parent {
-  width: 33%;
+  width: 32%;
 }
 
 .topBrandsSection .max .parent p {
@@ -100,7 +100,7 @@
   }
 
   .topBrandsSection .max .parent {
-    width: 50% !important;
+    width: 49% !important;
   }
 
   .topBrandsSection .max .parent:nth-of-type(3) {
@@ -119,10 +119,6 @@
 
   .topBrandsSection .max .parent {
     width: 100% !important;
-  }
-
-  .topBrandsSection .max .parent:not(:last-child) {
-    margin-bottom: 15px;
   }
 
   .topBrandsSection .max .parent:nth-of-type(2) .content {

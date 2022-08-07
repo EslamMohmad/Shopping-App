@@ -91,7 +91,7 @@ const FlashSaleMinSlider = () => {
     900: {
       slidesPerView: 2,
     },
-    1400: {
+    1401: {
       slidesPerView: 1,
     },
   };

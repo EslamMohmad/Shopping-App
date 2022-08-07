@@ -1,9 +1,14 @@
 .downloadSection .content h1 {
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .downloadSection .content p {
-  font-size: 50px;
+  font-size: 30px;
+  line-height: normal;
+}
+
+.downloadSection .icons .appIcon {
+  cursor: pointer;
 }
 
 .downloadSection .icons .appIcon:hover {
@@ -14,23 +19,17 @@
   max-width: 400px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
   .downloadSection .content h1 {
+    font-size: 20px;
+  }
+
+  .downloadSection .content p {
     font-size: 25px;
   }
 
-  .downloadSection .content p {
-    font-size: 40px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .downloadSection .content h1 {
-    font-size: 2vh;
-  }
-
-  .downloadSection .content p {
-    font-size: 3vh;
+  .downloadSection .icons .appIcon {
+    width: 150px;
   }
 }
 

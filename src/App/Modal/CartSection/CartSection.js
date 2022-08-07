@@ -2,15 +2,21 @@ import React from "react";
 import ASide from "../../Reuseable Components/ASide/ASide";
 import CloseSection from "../../Reuseable Components/CloseSection/CloseSection";
 import Icon from "../../Reuseable Components/Icon/Icon";
-import { removeItemFunc } from "../../Store/CartSlice";
-import { increaseFunc, decreaseFunc } from "../../Store/CartSlice";
+import {
+  removeItemFunc,
+  increaseFunc,
+  decreaseFunc,
+} from "../../Store/CartSlice";
+import { Link } from "react-router-dom";
 import Cart from "../../Reuseable Components/AddCart/Cart.jpg";
+import { overLayFunc } from "../../Store/ModalSlice";
+import { viewDetails } from "../../Store/ProductsSlice";
 
 import "./CartSection.css";
 
 const CartSection = ({ data: { products }, action }) => {
   const itemHandler = () =>
-    products.map(({ imgsrc, amount, price, title, color, size }, idx) => (
+    products.map(({ id, imgsrc, amount, price, title, color, size }, idx) => (
       <div className="product rounded  mb-4 position-relative" key={idx}>
         <div
           className="deleteItem position-absolute pointer"
@@ -19,12 +25,20 @@ const CartSection = ({ data: { products }, action }) => {
           <Icon prefix={"fa-solid"} icon={"fa-xmark"} />
         </div>
         <div className="overflow-hidden d-flex">
-          <div className="img rounded overflow-hidden me-4">
-            <img
-              src={require(`../../Components/Products/${imgsrc}`)}
-              alt="img"
-            />
-          </div>
+          <Link to={`/Shopping-App/productDetails/product/${id}`}>
+            <div
+              className="img rounded overflow-hidden me-4"
+              onClick={() => {
+                action(overLayFunc());
+                action(viewDetails());
+              }}
+            >
+              <img
+                src={require(`../../Components/Products/${imgsrc}`)}
+                alt="img"
+              />
+            </div>
+          </Link>
           <div className="content pe-2 pt-2 d-flex flex-column justify-content-between">
             <p className="mb-0">
               <span>{title} - </span>

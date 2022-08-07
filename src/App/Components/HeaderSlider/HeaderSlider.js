@@ -13,16 +13,13 @@ const HeaderSlider = () => {
     ));
 
   const responsive = {
-    1200: {
-      slidesPerView: 1,
-    },
-    1400: {
+    1401: {
       slidesPerView: 1.065,
     },
   };
 
   return (
-    <div className="headerSlider mb-3 mb-xxl-5 container-fluid px-3 px-lg-5 px-xxl-0">
+    <div className="headerSlider mb-3 mb-xxl-5 container-fluid px-0">
       <SwiperContainer
         space={16}
         center={true}

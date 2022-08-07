@@ -18,6 +18,7 @@ const Modal = () => {
 
   return ReactDOM.createPortal(
     <OverLaySection props={state.ModalSlice} action={dispatch}>
+      <CartSection data={state.cartSlice} action={dispatch} />
       <SearchSection
         data={state.SearchSlice}
         action={dispatch}
@@ -28,14 +29,8 @@ const Modal = () => {
         logState={state.ModalSlice.rememberMeState}
         sectionState={state.ModalSlice.loggingState}
       />
-      <MenuSection />
-      <CartSection data={state.cartSlice} action={dispatch} />
-      <ProductInfoSection
-        data={state.ProductsSlice}
-        action={dispatch}
-        sectionState={state.ModalSlice.productInfoState}
-        overLayState={state.ModalSlice.overLayState}
-      />
+      <ProductInfoSection sectionState={state.ModalSlice.productInfoState} />
+      <MenuSection />,
     </OverLaySection>,
     document.getElementById("modal")
   );

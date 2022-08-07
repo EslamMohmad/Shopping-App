@@ -1,6 +1,6 @@
 .swiper-pagination .swiper-pagination-bullet {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background-color: white;
   opacity: 1;
   box-shadow: 0 0 5px lightgray;
@@ -10,14 +10,10 @@
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
-  width: 25px;
-  height: 15px;
+  width: 15px;
+  height: 10px;
   border-radius: 10px;
   background-color: black;
-}
-
-.headerSlider {
-  margin-top: 95px;
 }
 
 .headerSlider .swiper-container {

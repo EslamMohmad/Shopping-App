@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-import { productInfoFunc, overLayFunc } from "./ModalSlice";
+import { overLayFunc, backToHomeFunc, productInfoFunc } from "./ModalSlice";
 
 export const productData = createAsyncThunk(
   "products/productData",
@@ -8,7 +8,7 @@ export const productData = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       return await (
-        await fetch("DataBase/Data.json", {
+        await fetch("../../DataBase/Data.json", {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -26,7 +26,6 @@ const ProductsSlice = createSlice({
   initialState: {
     bestSellers: [],
     newArrivals: [],
-    sectionState: false,
     productInfo: {
       product: {},
       name: "",
@@ -36,6 +35,7 @@ const ProductsSlice = createSlice({
     },
     addToCartState: false,
     loadingState: false,
+    productViewDetailstState: false,
   },
   reducers: {
     increase: (state) => {
@@ -60,18 +60,26 @@ const ProductsSlice = createSlice({
       state.addToCartState = payload;
       state.loadingState = false;
     },
+    viewDetails: (state) => {
+      state.productViewDetailstState = true;
+    },
+    getProductDetailsFromURLFunc: (state, { payload }) => {
+      state.productInfo.product = payload.targetDetails;
+      console.log(state.productInfo.product);
+    },
   },
   extraReducers: {
     //calling local api
     [productData.pending]: (state, action) => {
       // console.log("wating.....");
     },
-    [productData.fulfilled]: (state, { payload }) => {
+    [productData.fulfilled]: (state, { payload, meta }) => {
       state.bestSellers = payload.bestSellers;
       state.newArrivals = payload.newArrivals;
+      state.productViewDetailstState = meta.arg;
     },
     [productData.rejected]: (state, action) => {
-      console.log("bad connection!");
+      console.error("bad connection!");
     },
 
     //excute outer reducer
@@ -80,14 +88,19 @@ const ProductsSlice = createSlice({
       state.productInfo.name = name;
     },
     [overLayFunc]: (state) => {
-      state.productInfo = {
-        product: {},
-        name: "",
-        amount: 1,
-        color: { colorState: false, result: "" },
-        size: { sizeState: false, result: "" },
-      };
+      if (!state.productViewDetailstState) {
+        state.productInfo.amount = 1;
+        state.productInfo.color = { colorState: false, result: "" };
+        state.productInfo.size = { sizeState: false, result: "" };
+        state.addToCartState = false;
+      }
+    },
+    [backToHomeFunc]: (state) => {
+      state.productInfo.amount = 1;
       state.addToCartState = false;
+      state.productInfo.color = { colorState: false, result: "" };
+      state.productInfo.size = { sizeState: false, result: "" };
+      state.productViewDetailstState = false;
     },
   },
 });
@@ -99,6 +112,8 @@ export const {
   currentSize,
   addToCart,
   watingProcces,
+  viewDetails,
+  getProductDetailsFromURLFunc,
 } = ProductsSlice.actions;
 
 export default ProductsSlice.reducer;

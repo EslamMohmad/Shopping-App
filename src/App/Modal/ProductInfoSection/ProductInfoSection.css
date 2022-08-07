@@ -2,6 +2,29 @@
   width: 900px;
   max-width: 900px;
   max-height: 100%;
+  animation: scaleEnd 0.4s;
+}
+
+@keyframes scaleStart {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleEnd {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.97);
+  }
+}
+
+.productInfoSection.active {
+  animation: scaleStart 0.4s;
 }
 
 .productInfoSection .closeIcon {
@@ -17,179 +40,4 @@
 
 .productInfoSection .img img {
   object-fit: cover;
-}
-
-.productInfoSection .productInfo {
-  overflow-y: auto;
-}
-
-.productInfoSection .description {
-  font-size: 14px;
-  color: gray;
-}
-
-.productInfoSection .price {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.productInfoSection .price span:last-child {
-  margin-left: 15px;
-  color: gray;
-  text-decoration: line-through;
-}
-
-.productInfoSection .size p,
-.productInfoSection .color p {
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.productInfoSection .size li,
-.productInfoSection .color li {
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  margin-right: 10px;
-  border: 1px solid transparent;
-  font-size: 14px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 0.2s ease border-color;
-}
-
-.productInfoSection .color li {
-  padding: 5px;
-}
-
-.productInfoSection .color li span {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.productInfoSection .size li:hover,
-.productInfoSection .size li.active,
-.productInfoSection .color li.active,
-.productInfoSection .color li:hover {
-  border-color: black;
-}
-
-.productInfoSection .productCount .count {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.productInfoSection .productCount .count button {
-  border: none;
-  outline: none;
-  font-size: 18px;
-  transition: 0.3s ease;
-  transition-property: color, background-color;
-}
-
-.productInfoSection .productCount .count button:hover {
-  color: white;
-  background-color: black;
-}
-
-.productInfoSection .productCount .count p {
-  border: 1px solid lightgray;
-  border-top: none;
-  border-bottom: none;
-  text-align: center;
-  line-height: 42px;
-}
-
-.productInfoSection .productDetails button {
-  border: none;
-  outline: none;
-  transition: 0.3s ease background-color;
-}
-
-.productInfoSection .productDetails button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.productInfoSection .productCount .addToCart button {
-  cursor: not-allowed;
-  transition: 0.2s ease background-color;
-}
-
-.productInfoSection .productCount .addToCart button.active {
-  cursor: pointer;
-}
-
-.productInfoSection .productCount .addToCart button.active:hover {
-  background-color: rgba(26, 30, 33, 0.9);
-  border-color: transparent !important;
-}
-
-.productInfoSection .productCount .addToCart .loading {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: rgba(255, 255, 255, 0.5);
-  position: relative;
-  animation: rotate 1.5s linear infinite;
-}
-
-.productInfoSection .productCount .addToCart .loading::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background-color: #1a1e21;
-}
-
-.productInfoSection .productCount .addToCart .loading::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: white;
-}
-
-@keyframes rotate {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .productInfoSection .productCount {
-    flex-direction: column;
-  }
-
-  .productInfoSection .productCount > div {
-    width: 100% !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .productInfoSection {
-    flex-direction: column;
-  }
-
-  .productInfoSection .img,
-  .productInfoSection .productInfo {
-    width: 100% !important;
-  }
-
-  .productInfoSection .img {
-    height: 350px !important;
-  }
-
-  .productInfoSection .img img {
-    object-position: top;
-  }
 }

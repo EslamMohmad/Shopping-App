@@ -31,6 +31,7 @@ const Products = () => {
           style={{ minHeight: "150px", objectFit: "cover" }}
         />
       </div>
+
       <ProductContainer
         payload={newArrivals}
         thunkFunc={productData}

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
@@ -12,9 +13,11 @@ import StoreApp from "./App/StoreApp";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={Store}>
-      <StoreApp />
-    </Provider>
+    <BrowserRouter>
+      <Provider store={Store}>
+        <StoreApp />
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

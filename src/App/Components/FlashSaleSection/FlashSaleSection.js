@@ -9,7 +9,7 @@ import ShopByCategory from "./ShopByCategory";
 
 const FlashSaleSection = () => {
   return (
-    <div className="FlashSaleSection border-bottom mb-5">
+    <div className="FlashSaleSection border-bottom mb-3 mb-xxl-5">
       <div className="row mx-auto d-grid mb-3">
         <div className="banner px-0">
           <img className="hoverEffect" src={wideImg} alt="wide-img" />

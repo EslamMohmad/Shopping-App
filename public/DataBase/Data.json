@@ -83,7 +83,7 @@
   ],
   "newArrivals": [
     {
-      "id": 0,
+      "id": 10,
       "img": "NewArrivals/NewArrivalsImgs/p-1.png",
       "title": "Armani Veni Vidi Vici",
       "description": "Fendi began life in 1925 as a fur and leather speciality store in Rome.",
@@ -91,7 +91,7 @@
       "afterSale": "$17.99"
     },
     {
-      "id": 1,
+      "id": 11,
       "img": "NewArrivals/NewArrivalsImgs/p-2.png",
       "title": "H&M Global Desi",
       "description": "Blue solid woven regular top, curved hem with tassell detailing has shoulder straps, and sleeveless",
@@ -99,7 +99,7 @@
       "afterSale": "$30.00"
     },
     {
-      "id": 2,
+      "id": 12,
       "img": "NewArrivals/NewArrivalsImgs/p-3.png",
       "title": "Zara Solly White Shirt",
       "description": "For a chic and smart look, don this white shirt from Solly by Allen Solly. Crafted from a cotton-nylon blend with a hint of stretch, this design features a dotted pattern. Wear this 3/4th sleeves shirt with trousers and wedges to a client meeting.",
@@ -107,7 +107,7 @@
       "afterSale": "$25.00"
     },
     {
-      "id": 3,
+      "id": 13,
       "img": "NewArrivals/NewArrivalsImgs/p-4.png",
       "title": "Hermes  Carlton London",
       "description": "Off-White self-striped knitted midi A-line dress, has a scoop neck, sleeveless, straight hem",
@@ -115,7 +115,7 @@
       "afterSale": "$15.00"
     },
     {
-      "id": 4,
+      "id": 14,
       "img": "NewArrivals/NewArrivalsImgs/p-5.png",
       "title": "Scuba Stand Collar Topper Jacket",
       "description": "Zara provides only the highest-quality selection of dresses, womens suits, and suited separates.",
@@ -123,7 +123,7 @@
       "afterSale": "$12.00"
     },
     {
-      "id": 5,
+      "id": 15,
       "img": "NewArrivals/NewArrivalsImgs/p-6.png",
       "title": "Armani Wide-Leg Trousers",
       "description": "Monochrome elegance. Made with a relaxed wide-leg, these trousers are made from a sustainable soft organic cotton with a mechanical stretch making the garment easily recycled.",
@@ -131,7 +131,7 @@
       "afterSale": "$60.00"
     },
     {
-      "id": 6,
+      "id": 16,
       "img": "NewArrivals/NewArrivalsImgs/p-7.png",
       "title": "Short Sleeve Shirts For Men",
       "description": "From casual days out to parties, dinners and other events that call for a dressier look, a short sleeve shirt is a versatile piece that works for all kinds of occasions.",
@@ -139,7 +139,7 @@
       "afterSale": "$12.99"
     },
     {
-      "id": 7,
+      "id": 17,
       "img": "NewArrivals/NewArrivalsImgs/p-8.png",
       "title": "Blazer And A Neck Scarf",
       "description": "blue short sleeve basic midi dress featuring a crew neckline in a jersey fabric.",
@@ -147,7 +147,7 @@
       "afterSale": "$13.00"
     },
     {
-      "id": 8,
+      "id": 18,
       "img": "NewArrivals/NewArrivalsImgs/p-9.png",
       "title": "Zara Shoes Green",
       "description": "NIKE 2020 Black White is a clean and monochromatic colourway",
@@ -155,7 +155,7 @@
       "afterSale": "$28.00"
     },
     {
-      "id": 9,
+      "id": 19,
       "img": "NewArrivals/NewArrivalsImgs/p-10.png",
       "title": "Maniac Red Boys",
       "description": "Sporty essentials, these Under Armour athletic shorts are smooth and lightweight in moisture-wicking material.",

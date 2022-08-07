@@ -16,3 +16,12 @@ html {
     margin-bottom: 5rem;
   }
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}

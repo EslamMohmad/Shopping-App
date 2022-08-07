@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import Icon from "../../Reuseable Components/Icon/Icon";
 import { getSearchResults, inputState } from "../../Store/SearchSlice";
-
+import useFocus from "../../Hooks/useFocus";
 import "./SearchSection.css";
 
 const SearchSection = ({ data, action, sectionState }) => {
-  const focusInput = useRef(null);
+  const [inputRef, setInputRef] = useFocus();
 
   const searchItemRender = () =>
     data.results.map(({ id, img, title, befourSale, afterSale }) => (
@@ -30,13 +30,13 @@ const SearchSection = ({ data, action, sectionState }) => {
       </div>
     ));
 
-  sectionState && focusInput.current.focus();
-
   useEffect(() => {
     if (data.inputValue.length) {
       action(getSearchResults());
     }
-  }, [data.inputValue, action]);
+
+    sectionState && inputRef.current.focus();
+  }, [data.inputValue, action, inputRef, sectionState]);
 
   return (
     <div className="searchSection">
@@ -48,12 +48,17 @@ const SearchSection = ({ data, action, sectionState }) => {
           <div className="result-icon">
             <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
           </div>
-          <input type="text" placeholder="search..." ref={focusInput} />
+          <input
+            type="text"
+            placeholder="search..."
+            ref={inputRef}
+            focus="true"
+          />
           <button
             type="reset"
             onClick={() => {
               action(inputState(""));
-              focusInput.current.focus();
+              setInputRef();
             }}
           >
             <Icon prefix={"fa-solid"} icon={"fa-xmark"} />

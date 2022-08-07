@@ -9,7 +9,9 @@ const ModalSlice = createSlice({
     rememberMeState: false,
     menuState: false,
     cartState: false,
+    AsideState: false,
     productInfoState: false,
+    homeState: false,
   },
 
   reducers: {
@@ -34,14 +36,22 @@ const ModalSlice = createSlice({
     menuFunc: (state, _) => {
       state.overLayState = true;
       state.menuState = true;
+      state.AsideState = true;
     },
     cartFunc: (state, _) => {
       state.overLayState = true;
       state.cartState = true;
+      state.AsideState = true;
     },
     productInfoFunc: (state) => {
       state.overLayState = true;
       state.productInfoState = true;
+    },
+    backToHomeFunc: (state) => {
+      state.homeState = true;
+    },
+    scrollToElement: (state, { payload }) => {
+      console.log([payload]);
     },
   },
 });
@@ -54,6 +64,8 @@ export const {
   menuFunc,
   cartFunc,
   productInfoFunc,
+  backToHomeFunc,
+  scrollToElement,
 } = ModalSlice.actions;
 
 export default ModalSlice.reducer;

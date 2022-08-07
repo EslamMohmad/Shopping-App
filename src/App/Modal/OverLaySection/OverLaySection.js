@@ -4,6 +4,8 @@ import { overLayFunc } from "../../Store/ModalSlice";
 
 import "./OverLaySection.css";
 
+import useCLassRemoveSmoothly from "../../Hooks/useCLassRemoveSmoothly";
+
 const OverLaySection = ({ children, props, action }) => {
   const sectionsRender = () => {
     for (let prop in props) {
@@ -17,15 +19,14 @@ const OverLaySection = ({ children, props, action }) => {
     }
   };
 
-  const classRender = () => {
-    return props.searchState
-      ? "justify-content-center"
-        ? props.loggingState
-        : "justify-content-center align-items-center"
-      : "";
-  };
+  const cls = useCLassRemoveSmoothly(
+    props.AsideState,
+    1000,
+    "Aside-active",
+    "Aside-not-active"
+  );
 
-  props.cartState || props.menuState || props.productInfoState
+  props.overLayState
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto");
 
@@ -33,9 +34,9 @@ const OverLaySection = ({ children, props, action }) => {
     <div
       status={props.overLayState ? sectionsRender() : null}
       onClick={() => action(overLayFunc())}
-      className={`d-flex overLay ${
-        props.overLayState ? "active" : ""
-      } ${classRender()}`}
+      className={`d-flex overLay ${cls} ${
+        props.overLayState ? "active" : "not-active"
+      }`}
     >
       {children}
     </div>

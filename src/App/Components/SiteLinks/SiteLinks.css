@@ -1,0 +1,10 @@
+.siteLinks-section ul a {
+  list-style: none;
+  color: #696969;
+  text-decoration: none;
+  transition: 0.1s ease color;
+}
+
+.siteLinks-section ul a:hover {
+  color: black;
+}

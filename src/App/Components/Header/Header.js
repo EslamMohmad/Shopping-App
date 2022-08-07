@@ -9,6 +9,7 @@ import Logging from "../../Reuseable Components/Logging/Logging";
 import AddCart from "../../Reuseable Components/AddCart/AddCart";
 import Menu from "../../Reuseable Components/Menu/Menu";
 import Logo from "../../Reuseable Components/Logo/Logo";
+import BackToHome from "./../../Reuseable Components/BackToHome/BackToHome";
 
 const Header = () => {
   const [scroll, setScroll] = useState("no-scroll");
@@ -19,14 +20,16 @@ const Header = () => {
 
   return (
     <header className={`container-fluid px-4 ${scroll}`}>
-      <div className="row h-100">
-        <div className="d-flex parent-container justify-content-between align-items-center flex-row">
+      <div className="row mx-0 h-100">
+        <div className="px-0 d-flex parent-container justify-content-between align-items-center flex-row">
           <div className="col-auto d-flex left h-100 align-items-center">
             <div className="me-4 d-none d-md-block d-lg-none">
               <Menu />
             </div>
             <div className="img">
-              <Logo />
+              <BackToHome>
+                <Logo />
+              </BackToHome>
             </div>
             <nav className="nav h-100 d-none d-lg-block ">
               <Nav cls={"navLists"} />

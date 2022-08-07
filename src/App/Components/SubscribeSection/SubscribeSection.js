@@ -2,7 +2,7 @@ import React from "react";
 
 const SubscribeSection = () => {
   return (
-    <div className="subscribeSection py-5 d-flex justify-content-around align-items-center">
+    <div className="subscribeSection py-5 px-0 d-flex justify-content-between align-items-center">
       <div className="col-auto text">
         <h3 className="fw-bold mb-3">get export tips in your inbox</h3>
         <p className="mb-0">subscribe to our newsletter and stay updated</p>

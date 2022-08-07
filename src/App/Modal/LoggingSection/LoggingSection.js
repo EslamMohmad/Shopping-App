@@ -6,13 +6,17 @@ import Icon from "../../Reuseable Components/Icon/Icon";
 
 import logo from "../../Reuseable Components/Logo/logo.svg";
 
+import useCLassRemoveSmoothly from "../../Hooks/useCLassRemoveSmoothly";
+
 import "./LoggingSection.css";
 
 const LoggingSection = ({ action, logState, sectionState }) => {
+  const cls = useCLassRemoveSmoothly(sectionState, 400, "d-block", "d-none");
+
   return (
     <div
       onClick={(e) => e.stopPropagation()}
-      className={`logging ${sectionState ? "d-block" : "d-none"}`}
+      className={`logging ${cls} ${sectionState ? "active" : "not-active"}`}
     >
       <div className="parent">
         <div className="top d-flex align-items-center flex-column">
