@@ -10,7 +10,7 @@ import {
 import { Link } from "react-router-dom";
 import Cart from "../../Reuseable Components/AddCart/Cart.jpg";
 import { overLayFunc } from "../../Store/ModalSlice";
-import { viewDetails } from "../../Store/ProductsSlice";
+import { viewDetails, productCartFunc } from "../../Store/ProductsSlice";
 
 import "./CartSection.css";
 
@@ -31,6 +31,7 @@ const CartSection = ({ data: { products }, action }) => {
               onClick={() => {
                 action(overLayFunc());
                 action(viewDetails());
+                action(productCartFunc(id));
               }}
             >
               <img
@@ -39,15 +40,15 @@ const CartSection = ({ data: { products }, action }) => {
               />
             </div>
           </Link>
-          <div className="content pe-2 pt-2 d-flex flex-column justify-content-between">
+          <div className="content d-flex flex-column justify-content-between">
             <p className="mb-0">
               <span>{title} - </span>
               <span>
                 {color} , {size}
               </span>
             </p>
-            <p className="mb-5">unit price : {price}</p>
-            <div className="d-flex justify-content-between align-items-center">
+            <p className="mb-3">unit price : {price}</p>
+            <div className="d-flex bot justify-content-between align-items-center">
               <div className="count d-flex">
                 <button
                   className="decrease w-25"

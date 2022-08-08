@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import Store from "./App/Store/Store";
 
 import StoreApp from "./App/StoreApp";
+// import App from "./Application/App";
 
 ReactDOM.render(
   <React.StrictMode>

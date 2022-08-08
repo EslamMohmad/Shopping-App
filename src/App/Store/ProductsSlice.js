@@ -4,11 +4,11 @@ import { overLayFunc, backToHomeFunc, productInfoFunc } from "./ModalSlice";
 
 export const productData = createAsyncThunk(
   "products/productData",
-  async (_, thunkAPI) => {
+  async (payload, thunkAPI) => {
     const { rejectWithValue } = thunkAPI;
     try {
       return await (
-        await fetch("../../DataBase/Data.json", {
+        await fetch(payload.URL, {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -64,8 +64,16 @@ const ProductsSlice = createSlice({
       state.productViewDetailstState = true;
     },
     getProductDetailsFromURLFunc: (state, { payload }) => {
-      state.productInfo.product = payload.targetDetails;
-      console.log(state.productInfo.product);
+      state.productInfo.product = payload;
+    },
+    productCartFunc: (state, { payload }) => {
+      const globalData = [...state.bestSellers, ...state.newArrivals];
+      const determidProduct = globalData.filter(({ id }) => id === payload)[0];
+      state.productInfo.amount = 1;
+      state.productInfo.color = { colorState: false, result: "" };
+      state.productInfo.size = { sizeState: false, result: "" };
+      state.addToCartState = false;
+      state.productInfo.product = determidProduct;
     },
   },
   extraReducers: {
@@ -76,7 +84,7 @@ const ProductsSlice = createSlice({
     [productData.fulfilled]: (state, { payload, meta }) => {
       state.bestSellers = payload.bestSellers;
       state.newArrivals = payload.newArrivals;
-      state.productViewDetailstState = meta.arg;
+      state.productViewDetailstState = meta.arg.state;
     },
     [productData.rejected]: (state, action) => {
       console.error("bad connection!");
@@ -114,6 +122,7 @@ export const {
   watingProcces,
   viewDetails,
   getProductDetailsFromURLFunc,
+  productCartFunc,
 } = ProductsSlice.actions;
 
 export default ProductsSlice.reducer;

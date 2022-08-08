@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -25,12 +25,14 @@ const ProductDescription = ({ targetDetails }) => {
     productViewDetailstState,
   } = useSelector(({ ProductsSlice }) => ProductsSlice);
 
-  //destructuring from ModalSlice
   const { productInfoState, cartState } = useSelector(
     ({ ModalSlice }) => ModalSlice
   );
 
-  const { id, title, description, befourSale, afterSale } = product;
+  //destructuring from ModalSlice
+
+  const { id, title, description, befourSale, afterSale } =
+    targetDetails || product;
 
   const action = useDispatch();
 
@@ -43,7 +45,7 @@ const ProductDescription = ({ targetDetails }) => {
     };
 
     return Object.keys(colorsObj).map((color, idx) => (
-      <li key={idx} className={productInfoState ? null : ""}>
+      <li key={idx} className={productInfoState || cartState ? null : ""}>
         <span
           style={{ backgroundColor: colorsObj[color] }}
           onClick={(e) => {
@@ -67,7 +69,7 @@ const ProductDescription = ({ targetDetails }) => {
     };
     return Object.keys(sizes).map((size, idx) => (
       <li
-        className={productInfoState ? null : ""}
+        className={productInfoState || cartState ? null : ""}
         key={idx}
         onClick={(e) => {
           [...e.target.parentElement.children].forEach((ele) =>
@@ -124,9 +126,11 @@ const ProductDescription = ({ targetDetails }) => {
             +
           </button>
         </div>
-        <div className="addToCart w-50">
+        <div
+          className={`addToCart w-50 ${loadingState ? "not-allow" : "allow"}`}
+        >
           <button
-            className={`${addToCartClassHandler()} w-100 py-2 d-flex justify-content-center align-items-center`}
+            className={`${addToCartClassHandler()}  w-100 py-2 d-flex justify-content-center align-items-center`}
             onClick={() => {
               if (color.colorState && size.sizeState) {
                 action(addToCart(true));
@@ -152,7 +156,7 @@ const ProductDescription = ({ targetDetails }) => {
           view cart
         </button>
       )}
-      {(productInfoState || !productViewDetailstState) && (
+      {productInfoState && !productViewDetailstState && (
         <div className="productDetails">
           <Link to={`/Shopping-App/productDetails/product/${id}`}>
             <button

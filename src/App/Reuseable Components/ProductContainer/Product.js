@@ -1,5 +1,5 @@
 import React from "react";
-import { productInfoFunc, scrollToElement } from "../../Store/ModalSlice";
+import { productInfoFunc } from "../../Store/ModalSlice";
 
 const Product = ({ product, action, name }) => {
   return (

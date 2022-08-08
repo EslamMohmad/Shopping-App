@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -13,13 +13,20 @@ const Products = () => {
     (state) => state.ProductsSlice
   );
 
+  const { homeState } = useSelector(({ ModalSlice }) => ModalSlice);
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (!homeState) {
+      dispatch(productData({ state: false, URL: "DataBase/Data.json" }));
+    } // dont excute code when back to home
+  }, [dispatch, homeState]);
 
   return (
     <div className="products border-bottom mb-5">
       <ProductContainer
         payload={bestSellers}
-        thunkFunc={productData}
         action={dispatch}
         name="bestSellers"
       />
@@ -34,7 +41,6 @@ const Products = () => {
 
       <ProductContainer
         payload={newArrivals}
-        thunkFunc={productData}
         action={dispatch}
         name="newArrivals"
       />

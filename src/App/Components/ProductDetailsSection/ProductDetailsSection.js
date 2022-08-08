@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import useScrollToTop from "./../../Hooks/useScrollToTop";
@@ -13,6 +13,8 @@ import ProductDescription from "./../../Reuseable Components/ProductDetails/Prod
 
 import SwiperContainer from "./../../Reuseable Components/SwiperContainer/SwiperContainer";
 
+import ProductContainer from "../../Reuseable Components/ProductContainer/ProductContainer";
+
 import "./ProductDetailsSection.css";
 
 const ProductDetailsSection = () => {
@@ -21,22 +23,42 @@ const ProductDetailsSection = () => {
     slidetwo: false,
     slidethree: false,
   });
-  const { productViewDetailstState, bestSellers, newArrivals } = useSelector(
-    ({ ProductsSlice }) => ProductsSlice
-  );
+
+  const {
+    productViewDetailstState,
+    bestSellers,
+    newArrivals,
+    productInfo: { product },
+  } = useSelector(({ ProductsSlice }) => ProductsSlice);
 
   const action = useDispatch();
 
-  if (!productViewDetailstState) {
-    action(productData(true)); //calling API
-    // action(getProductDetailsFromURLFunc({ targetDetails }));
-  }
-
   const { id: productID } = useParams();
 
-  const targetDetails = [...bestSellers, ...newArrivals].filter(
-    (item) => item.id === +productID
-  )[0];
+  const targetDetails = useMemo(() => {
+    return (
+      [...bestSellers, ...newArrivals].filter(
+        (item) => item.id === +productID
+      )[0] || {}
+    );
+  }, [bestSellers, newArrivals, productID]);
+
+  useEffect(() => {
+    if (!Object.keys(product).length) {
+      action(getProductDetailsFromURLFunc(targetDetails));
+    } //set current data
+
+    if (!productViewDetailstState) {
+      action(
+        productData({
+          state: true,
+          URL: "/DataBase/Data.json",
+        })
+      ); //calling API
+    }
+  }, [action, productViewDetailstState, targetDetails, product]);
+
+  const targetImg = targetDetails || { img: "" };
 
   useScrollToTop();
 
@@ -75,7 +97,7 @@ const ProductDetailsSection = () => {
 
   return (
     <div className="container-fluid px-0 mt-5">
-      <div className="d-flex row mx-0 px-0 justify-content-evenly productDetailsSection">
+      <div className="d-flex row mx-0 px-0 mb-4 mb-md-5 justify-content-evenly productDetailsSection">
         <div className="col-auto col-xl-5 col-xxl-6 px-0 imgs position-sticky">
           <SwiperContainer
             space={16}
@@ -86,13 +108,13 @@ const ProductDetailsSection = () => {
             autoplay={false}
             loop={true}
           >
-            <ProductImg />
-            <ProductImg />
-            <ProductImg />
+            <ProductImg targetImg={targetImg} />
+            <ProductImg targetImg={targetImg} />
+            <ProductImg targetImg={targetImg} />
           </SwiperContainer>
         </div>
         <div className="col-xl-5 col-xxl-4 px-0">
-          <ProductDescription targetProduct={targetDetails} />
+          <ProductDescription targetDetails={targetDetails} />
           <div className="productInformation mb-5">
             <p>
               <span className="fw-bold">SKU : </span>
@@ -211,6 +233,13 @@ const ProductDetailsSection = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="row mx-0 px-0">
+        <ProductContainer
+          payload={bestSellers.slice(0, 5)}
+          action={action}
+          name="related products"
+        />
       </div>
     </div>
   );

@@ -103,6 +103,14 @@
   cursor: pointer;
 }
 
+.productDetails .productCount .addToCart.not-allow {
+  cursor: not-allowed;
+}
+
+.productDetails .productCount .addToCart.not-allow button {
+  pointer-events: none;
+}
+
 .productDetails .productCount .addToCart button.active:hover {
   background-color: rgba(26, 30, 33, 0.9);
   border-color: transparent !important;

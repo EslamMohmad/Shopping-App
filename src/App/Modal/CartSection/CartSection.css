@@ -105,3 +105,18 @@
 .aside.cartSection .cartBtn.active button {
   background-color: black;
 }
+
+@media (max-width: 467px) {
+  .aside.cartSection .products .product .content .bot {
+    flex-direction: column-reverse;
+    align-items: flex-start !important;
+  }
+
+  .aside.cartSection .products .product .content .bot > div {
+    width: 100%;
+  }
+
+  .aside.cartSection .products .product .content .bot > p {
+    margin-bottom: 15px !important;
+  }
+}
