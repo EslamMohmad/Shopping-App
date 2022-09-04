@@ -2,11 +2,12 @@
   position: relative;
   width: 500px;
   max-width: 500px;
-  max-height: 100%;
+  max-height: 644px;
   background-color: white;
   border-radius: 10px;
-  transform-origin: 50% 50%;
+  padding: 30px;
   overflow-y: auto;
+  transform-origin: 50% 50%;
   animation: scaleEnd 0.5s ease alternate;
 }
 
@@ -30,11 +31,6 @@
 
 .overLay .logging.active {
   animation: scaleStart 0.5s ease alternate;
-}
-
-.overLay .logging .parent {
-  padding: 30px;
-  max-height: 644px;
 }
 
 .overLay .logging .formInput {
@@ -132,4 +128,10 @@
 
 .overLay .logging .logBtn.google {
   background-color: #4285f4;
+}
+
+@media (max-height: 700px) {
+  .overLay .logging {
+    max-height: 100%;
+  }
 }

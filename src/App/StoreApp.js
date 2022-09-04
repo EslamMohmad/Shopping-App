@@ -7,6 +7,7 @@ import Header from "./Components/Header/Header";
 import FooterSection from "./Components/FooterSection/FooterSection";
 import Main from "./Components/Main";
 import ProductDetailsSection from "./Components/ProductDetailsSection/ProductDetailsSection";
+import MyAccount from "./Components/MyAccount/MyAccount";
 
 const StoreApp = () => {
   return (
@@ -19,9 +20,10 @@ const StoreApp = () => {
         <Routes>
           <Route path="/Shopping-App/" element={<Main />} />
           <Route
-            path="/Shopping-App/productDetails/product/:id"
+            path="/Shopping-App/products/product/:id"
             element={<ProductDetailsSection />}
           />
+          <Route path="Shopping-App/*" element={<MyAccount />} />
         </Routes>
         <FooterSection />
       </div>

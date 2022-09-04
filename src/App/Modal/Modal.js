@@ -27,8 +27,10 @@ const Modal = () => {
       />
       <LoggingSection
         action={dispatch}
-        logState={state.ModalSlice.rememberMeState}
+        rememberState={state.ModalSlice.rememberMeState}
         sectionState={state.ModalSlice.loggingState}
+        singInState={state.ModalSlice.singInState}
+        singUpState={state.ModalSlice.singUpState}
       />
       <ProductInfoSection sectionState={state.ModalSlice.productInfoState} />
       <MenuSection />,

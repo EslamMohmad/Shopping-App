@@ -1,0 +1,104 @@
+.myAccount .headerImg {
+  height: 400px;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.myAccount .headerImg::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+}
+
+.myAccount .headerImg img {
+  object-fit: cover;
+}
+
+.myAccount .text {
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.myAccount .text p {
+  font-family: fantasy;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+.myAccount .accountInfo .orders th,
+.myAccount .accountInfo .orders td {
+  padding: 20px;
+  border: none;
+}
+
+.myAccount .accountInfo .orders tbody tr th,
+.myAccount .accountInfo .orders tbody tr td {
+  border-bottom: 1px solid lightgray;
+}
+
+.myAccount .accountInfo .accountSections li {
+  padding: 10px;
+  font-size: 18px;
+}
+
+.myAccount .dashBoard .dashBoard_text {
+  color: gray;
+}
+
+.myAccount .accountInfo .accountDetails form input {
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+@media (max-width: 991px) {
+  .myAccount .headerImg {
+    margin-bottom: 50px;
+  }
+  .myAccount .accountInfo ul {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .myAccount .accountInfo .accountSections li {
+    padding: 0;
+    min-width: 80px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .myAccount .headerImg {
+    height: 200px;
+  }
+
+  .myAccount .accountInfo ul {
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 767px) {
+  .myAccount .accountInfo .accountSections {
+    overflow-x: auto;
+    height: 60px;
+  }
+
+  .myAccount .accountInfo .accountSections ul {
+    width: 750px;
+  }
+
+  .myAccount .accountInfo .orders .orders_table {
+    overflow-x: auto;
+  }
+
+  .myAccount .accountInfo .orders table {
+    width: 750px;
+  }
+}

@@ -158,7 +158,7 @@ const ProductDescription = ({ targetDetails }) => {
       )}
       {productInfoState && !productViewDetailstState && (
         <div className="productDetails">
-          <Link to={`/Shopping-App/productDetails/product/${id}`}>
+          <Link to={`/Shopping-App/products/product/${id}`}>
             <button
               type="button"
               className="btn btn-dark w-100 py-2"

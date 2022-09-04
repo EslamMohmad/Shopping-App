@@ -1,0 +1,19 @@
+.user-logging img {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  border: 1px solid lightgray;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.user-logging img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 41px;
+  height: 41px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+}

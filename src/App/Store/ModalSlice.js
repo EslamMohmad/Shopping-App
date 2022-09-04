@@ -5,6 +5,9 @@ const ModalSlice = createSlice({
   initialState: {
     searchState: false,
     loggingState: false,
+    singInState: false,
+    singUpState: false,
+    myAccountState: false,
     overLayState: false,
     rememberMeState: false,
     menuState: false,
@@ -29,6 +32,16 @@ const ModalSlice = createSlice({
     loggingFunc: (state, _) => {
       state.overLayState = true;
       state.loggingState = true;
+      state.singInState = true;
+      state.singUpState = false;
+    },
+    singInFunc: (state, _) => {
+      state.singInState = true;
+      state.singUpState = false;
+    },
+    singUpFunc: (state, _) => {
+      state.singInState = false;
+      state.singUpState = true;
     },
     rememberMeFucn: (state, _) => {
       state.rememberMeState = !state.rememberMeState;
@@ -60,6 +73,8 @@ export const {
   searchFunc,
   overLayFunc,
   loggingFunc,
+  singInFunc,
+  singUpFunc,
   rememberMeFucn,
   menuFunc,
   cartFunc,

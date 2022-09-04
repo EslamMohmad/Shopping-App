@@ -1,7 +1,5 @@
 import React from "react";
 
-import SwiperContainer from "../../Reuseable Components/SwiperContainer/SwiperContainer";
-
 import Icon from "../../Reuseable Components/Icon/Icon";
 
 import "./MemberChat.css";
