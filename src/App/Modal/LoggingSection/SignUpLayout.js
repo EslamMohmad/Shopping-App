@@ -47,7 +47,7 @@ const SignUpLayout = ({ action }) => {
           type="text"
           className={`form-control formInput`}
           id="signUp-name"
-          autoComplete="true"
+          autoComplete="false"
           {...register("signUp-name", {
             required: "name is required",
           })}

@@ -25,7 +25,7 @@ const CartSection = ({ data: { products }, action }) => {
           <Icon prefix={"fa-solid"} icon={"fa-xmark"} />
         </div>
         <div className="overflow-hidden d-flex">
-          <Link to={`/Shopping-App/productDetails/product/${id}`}>
+          <Link to={`/Shopping-App/products/product/${id}`}>
             <div
               className="img rounded overflow-hidden me-4"
               onClick={() => {

@@ -51,7 +51,8 @@
   color: gray;
 }
 
-.myAccount .accountInfo .accountDetails form input {
+.myAccount .accountInfo .accountDetails form input,
+.myAccount .accountInfo .changePassword form input {
   outline: none;
   border: 1px solid lightgray;
 }
@@ -87,7 +88,7 @@
 @media (max-width: 767px) {
   .myAccount .accountInfo .accountSections {
     overflow-x: auto;
-    height: 60px;
+    height: 70px;
   }
 
   .myAccount .accountInfo .accountSections ul {

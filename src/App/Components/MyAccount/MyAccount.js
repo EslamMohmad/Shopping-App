@@ -1,14 +1,16 @@
 import React from "react";
 import { Route, Routes, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import DashBoard from "./Sections/DashBoard";
 import Orders from "./Sections/Orders";
 import AccountDetails from "./Sections/AccountDetails";
 import ChangePassword from "./Sections/ChangePassword";
-import LogOut from "./Sections/LogOut";
 
 import headerImg from "./headerImg.jpg";
 import "./MyAccount.css";
+import { logOutFunc } from "../../Store/LoggingSlice";
+import useScrollToTop from "./../../Hooks/useScrollToTop";
 
 const MyAccount = () => {
   const AsideLinks = [
@@ -16,8 +18,11 @@ const MyAccount = () => {
     { text: "orders", link: "myAccount/orders" },
     { text: "account details", link: "myAccount/accountDetails" },
     { text: "change password", link: "myAccount/changePassword" },
-    { text: "log out", link: "myAccount/logOut" },
   ];
+
+  const action = useDispatch();
+
+  useScrollToTop();
 
   return (
     <div className="myAccount">
@@ -40,6 +45,11 @@ const MyAccount = () => {
                     </li>
                   </Link>
                 ))}
+                <Link to="/Shopping-App" onClick={() => action(logOutFunc())}>
+                  <li>
+                    <span>log out</span>
+                  </li>
+                </Link>
               </ul>
             </aside>
             <div className="section col-12 col-lg-9 px-0">
@@ -54,7 +64,6 @@ const MyAccount = () => {
                   path="myAccount/changePassword"
                   element={<ChangePassword />}
                 />
-                <Route path="myAccount/logOut" element={<LogOut />} />
               </Routes>
             </div>
           </div>

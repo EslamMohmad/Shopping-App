@@ -1,7 +1,7 @@
 .user-logging img {
   position: relative;
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   border: 1px solid lightgray;
   padding: 3px;
   border-radius: 50%;
@@ -16,4 +16,12 @@
   height: 41px;
   border: 1px solid lightgray;
   border-radius: 50%;
+}
+
+.user-logging p {
+  font-size: 12px;
+  width: 30px;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-align: center;
 }

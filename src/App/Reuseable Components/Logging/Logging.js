@@ -23,9 +23,7 @@ const Logging = ({ content }) => {
   return (
     <div
       className="logging"
-      style={
-        currentFormState ? { order: "3", marginLeft: "10px" } : { order: "0" }
-      }
+      style={currentFormState ? { order: "3" } : { order: "0" }}
     >
       {currentFormState ? (
         <Link to="/Shopping-App/myAccount">

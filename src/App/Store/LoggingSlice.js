@@ -45,7 +45,11 @@ const LoggingSlice = createSlice({
       state.SIGNUP.email = payload["signUp-email"];
       state.SIGNUP.password = payload["signUp-password"];
     },
+    logOutFunc: (state) => {
+      state.currentFormState = false;
+    },
   },
+
   extraReducers: {
     [singInFunc]: (state) => {
       state.SIGNIN.formValidState = true;
@@ -58,6 +62,7 @@ const LoggingSlice = createSlice({
   },
 });
 
-export const { getSignInData, getSignUpData } = LoggingSlice.actions;
+export const { getSignInData, getSignUpData, logOutFunc } =
+  LoggingSlice.actions;
 
 export default LoggingSlice.reducer;
