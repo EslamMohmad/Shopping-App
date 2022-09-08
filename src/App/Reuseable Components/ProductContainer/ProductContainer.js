@@ -19,9 +19,8 @@ const ProductContainer = ({ name, payload, action }) => {
   };
 
   return (
-    <div className={`name mb-3 mb-xxl-5 px-0`}>
-      <h2 className="fw-bold mb-5">{name}</h2>
-      <div className="d-grid productGridLayout">{dataHandler()}</div>
+    <div className="d-grid productGridLayout mb-3 mb-xxl-5 px-0">
+      {dataHandler()}
     </div>
   );
 };

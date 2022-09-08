@@ -25,11 +25,14 @@ const Products = () => {
 
   return (
     <div className="products border-bottom mb-5">
-      <ProductContainer
-        payload={bestSellers}
-        action={dispatch}
-        name="bestSellers"
-      />
+      <div>
+        <h3 className="my-4 fw-bold">best sellers</h3>
+        <ProductContainer
+          payload={bestSellers}
+          action={dispatch}
+          name="bestSellers"
+        />
+      </div>
       <div className="sale-banner rounded overflow-hidden mb-3 mb-xxl-5">
         <img
           src={banner}
@@ -39,11 +42,15 @@ const Products = () => {
         />
       </div>
 
-      <ProductContainer
-        payload={newArrivals}
-        action={dispatch}
-        name="newArrivals"
-      />
+      <div>
+        <h3 className="my-4 fw-bold">new arrivals</h3>
+
+        <ProductContainer
+          payload={newArrivals}
+          action={dispatch}
+          name="newArrivals"
+        />
+      </div>
     </div>
   );
 };

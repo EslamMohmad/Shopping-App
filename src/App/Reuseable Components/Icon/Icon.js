@@ -11,6 +11,7 @@ import {
 
 import {
   faAngleDown,
+  faAngleUp,
   faXmark,
   faCaretDown,
   faMagnifyingGlass,
@@ -20,6 +21,8 @@ import {
   faBagShopping,
   faLink,
   faCommentDots,
+  faSliders,
+  faArrowLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -30,6 +33,7 @@ library.add(
   faAngleDown,
   faXmark,
   faCaretDown,
+  faAngleUp,
   faMagnifyingGlass,
   faCartShopping,
   faHouse,
@@ -37,7 +41,9 @@ library.add(
   faUser,
   faBagShopping,
   faLink,
-  faCommentDots
+  faCommentDots,
+  faSliders,
+  faArrowLeft
 );
 
 const Icon = ({ prefix, icon }) => {

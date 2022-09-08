@@ -76,11 +76,11 @@
 .navLists li p a {
   color: black;
   text-decoration: none;
+  font-weight: normal;
 }
 
-.navLists ul li:first-child {
+.navLists ul a:first-child {
   font-weight: 600;
-  padding: 12px 20px;
   font-size: 16px;
 }
 

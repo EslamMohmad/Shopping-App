@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Icon from "../../Reuseable Components/Icon/Icon";
 import BackToHome from "../BackToHome/BackToHome";
@@ -58,7 +59,9 @@ const Nav = ({ cls }) => {
         {col.map((row, ind) => (
           <ul className="rowList" key={ind}>
             {row.map((li, i) => (
-              <li key={i}>{li}</li>
+              <Link to="/Shopping-App/products" key={i}>
+                <li>{li}</li>
+              </Link>
             ))}
           </ul>
         ))}

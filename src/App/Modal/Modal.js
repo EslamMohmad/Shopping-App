@@ -11,6 +11,7 @@ import CartSection from "./CartSection/CartSection";
 import ProductInfoSection from "./ProductInfoSection/ProductInfoSection";
 
 import "./Modal.css";
+import ProductFilter from "./ProductFilter/ProductFilter";
 
 const Modal = () => {
   const state = useSelector((state) => state);
@@ -33,7 +34,8 @@ const Modal = () => {
         singUpState={state.ModalSlice.singUpState}
       />
       <ProductInfoSection sectionState={state.ModalSlice.productInfoState} />
-      <MenuSection />,
+      <MenuSection />
+      <ProductFilter action={dispatch} />
     </OverLaySection>,
     document.getElementById("modal")
   );

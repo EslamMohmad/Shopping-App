@@ -14,7 +14,8 @@
   right: -450px;
 }
 
-.aside.menuSection {
+.aside.menuSection,
+.aside.productFilterSection {
   left: -450px;
 }
 
@@ -23,7 +24,8 @@
   transition-delay: 0.4s;
 }
 
-.overLay[status="overLayState menuState"] .aside.menuSection {
+.overLay[status="overLayState menuState"] .aside.menuSection,
+.overLay[status="overLayState productFilterState"] .aside.productFilterSection {
   left: 0px;
   transition-delay: 0.4s;
 }

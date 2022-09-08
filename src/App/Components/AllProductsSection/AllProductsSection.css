@@ -1,0 +1,7 @@
+.allProductsSection .productsOptions {
+  min-width: 200px;
+}
+
+.allProductsSection .productsOptions .options ul :hover {
+  background-color: lightgray;
+}

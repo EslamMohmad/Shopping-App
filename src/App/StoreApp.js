@@ -8,6 +8,7 @@ import FooterSection from "./Components/FooterSection/FooterSection";
 import Main from "./Components/Main";
 import ProductDetailsSection from "./Components/ProductDetailsSection/ProductDetailsSection";
 import MyAccount from "./Components/MyAccount/MyAccount";
+import AllProductsSection from "./Components/AllProductsSection/AllProductsSection";
 
 const StoreApp = () => {
   return (
@@ -24,6 +25,10 @@ const StoreApp = () => {
             element={<ProductDetailsSection />}
           />
           <Route path="Shopping-App/*" element={<MyAccount />} />
+          <Route
+            path="/Shopping-App/products"
+            element={<AllProductsSection />}
+          />
         </Routes>
         <FooterSection />
       </div>

@@ -1,0 +1,27 @@
+.asideSection .sectionsTags .tag:hover {
+  border-color: black !important;
+}
+
+.asideSection input[type="checkbox"] {
+  accent-color: black;
+  width: 20px;
+  height: 20px;
+  appearance: none;
+}
+
+.asideSection input[type="checkbox"]:checked {
+  appearance: auto;
+}
+
+.asideSection .parent:hover input[type="checkbox"]:not(checked) {
+  appearance: auto;
+}
+
+.asideSection .colors .parent span.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: -4px;
+  border: 1.5px solid lightgray;
+}

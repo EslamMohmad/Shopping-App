@@ -12,6 +12,7 @@ const ModalSlice = createSlice({
     rememberMeState: false,
     menuState: false,
     cartState: false,
+    productFilterState: false,
     AsideState: false,
     productInfoState: false,
     homeState: false,
@@ -56,6 +57,11 @@ const ModalSlice = createSlice({
       state.cartState = true;
       state.AsideState = true;
     },
+    productFilterFunc: (state) => {
+      state.overLayState = true;
+      state.productFilterState = true;
+      state.AsideState = true;
+    },
     productInfoFunc: (state) => {
       state.overLayState = true;
       state.productInfoState = true;
@@ -78,6 +84,7 @@ export const {
   rememberMeFucn,
   menuFunc,
   cartFunc,
+  productFilterFunc,
   productInfoFunc,
   backToHomeFunc,
   scrollToElement,
