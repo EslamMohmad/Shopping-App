@@ -24,12 +24,17 @@ const ProductsOptions = () => {
     </li>
   ));
 
+  document.body.addEventListener("click", () => showOption(false));
+
   return (
     <div className="d-none d-sm-inline-block ms-5 position-relative productsOptions">
       <button
         className="d-flex align-items-center justify-content-between border rounded p-3 py-2 w-100"
         style={{ cursor: "pointer" }}
-        onClick={() => showOption(!option)}
+        onClick={(e) => {
+          e.stopPropagation();
+          showOption(!option);
+        }}
       >
         <span className="me-3">{optionType}</span>
         <div className="arrows d-flex flex-column">

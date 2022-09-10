@@ -54,7 +54,8 @@
   visibility: hidden;
   opacity: 0;
   transform: translateY(50px);
-  transition: 0.4s ease opacity, 0.4s ease transform;
+  transition: 0.6s ease;
+  transition-property: transform, opacity;
 }
 
 .navLists .navItem ul {
@@ -88,9 +89,9 @@
   background-color: lightgray;
 }
 
-.navLists .navItem:hover > .weraList {
-  opacity: 1;
+.navLists .navItem .weraList.active {
   visibility: visible;
+  opacity: 1;
   transform: translateY(-3px);
 }
 
@@ -107,8 +108,7 @@
 .asideList .navItem .weraList {
   display: none;
 }
-
-.asideList .navItem:hover .weraList {
+.asideList .navItem .weraList.active {
   display: block;
 }
 
@@ -131,7 +131,7 @@
   padding: 10px 0;
 }
 
-.asideList p:hover svg {
+.asideList p.active svg {
   transform: rotate(180deg);
 }
 

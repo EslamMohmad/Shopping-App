@@ -47,7 +47,7 @@
 }
 
 @media (max-width: 1200px) {
-  .productGridLayout {
+  .products .productGridLayout {
     grid-template-columns: repeat(4, auto);
     gap: 16px;
   }
@@ -58,7 +58,7 @@
 }
 
 @media (max-width: 992px) {
-  .productGridLayout {
+  .products .productGridLayout {
     grid-template-columns: repeat(3, auto);
   }
 }
@@ -70,7 +70,7 @@
 }
 
 @media (max-width: 567px) {
-  .productGridLayout {
+  .products .productGridLayout {
     grid-template-columns: repeat(2, auto);
   }
 }

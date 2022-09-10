@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import Icon from "../../Reuseable Components/Icon/Icon";
 import BackToHome from "../BackToHome/BackToHome";
 
 import "./Nav.css";
+import { overLayFunc } from "../../Store/ModalSlice";
 
 const Nav = ({ cls }) => {
+  const [listState, setListState] = useState({
+    menWearsState: false,
+    womenWearsState: false,
+  });
+
+  const action = useDispatch();
+
   const listsArr = [
     [
       ["gadgets", "smart wearables", "headphones"],
@@ -59,7 +68,11 @@ const Nav = ({ cls }) => {
         {col.map((row, ind) => (
           <ul className="rowList" key={ind}>
             {row.map((li, i) => (
-              <Link to="/Shopping-App/products" key={i}>
+              <Link
+                to="/Shopping-App/products"
+                key={i}
+                onClick={() => cls === "asideList" && action(overLayFunc())}
+              >
                 <li>{li}</li>
               </Link>
             ))}
@@ -74,30 +87,101 @@ const Nav = ({ cls }) => {
       style={{ listStyle: "none" }}
     >
       <li className="navItem">
-        <p className="mb-0 d-flex justify-content-between align-items-center h-100">
+        <p
+          className="mb-0 d-flex justify-content-between align-items-center h-100"
+          onClick={() => cls === "asideList" && action(overLayFunc())}
+        >
           <BackToHome>home</BackToHome>
         </p>
         <span></span>
       </li>
-      <li className="navItem">
-        <p className="mb-0 d-flex justify-content-between align-items-center h-100">
+      <li
+        className="navItem"
+        style={{ cursor: "pointer" }}
+        onClick={() =>
+          cls === "asideList" &&
+          setListState((prev) => ({
+            menWearsState: !prev.menWearsState,
+            womenWearsState: false,
+          }))
+        }
+        onMouseEnter={() => {
+          console.log(cls);
+
+          return (
+            cls === "navLists" &&
+            setListState(() => ({
+              menWearsState: true,
+              womenWearsState: false,
+            }))
+          );
+        }}
+        onMouseLeave={() =>
+          cls === "navLists" &&
+          setListState(() => ({
+            menWearsState: false,
+            womenWearsState: false,
+          }))
+        }
+      >
+        <p
+          className={`mb-0 d-flex justify-content-between align-items-center h-100  ${
+            listState.menWearsState ? "active" : false
+          }`}
+        >
           <span className="me-1">men wear</span>
           <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
         </p>
         <div className="bar d-none d-lg-block">
           <span></span>
         </div>
-        <div className="weraList">{listsArrRender()}</div>
+        <div
+          className={`weraList ${listState.menWearsState ? "active" : false}`}
+        >
+          {listsArrRender()}
+        </div>
       </li>
-      <li className="navItem">
-        <p className="mb-0 d-flex justify-content-between align-items-center h-100">
+      <li
+        className="navItem"
+        style={{ cursor: "pointer" }}
+        onClick={() =>
+          cls === "asideList" &&
+          setListState((prev) => ({
+            menWearsState: false,
+            womenWearsState: !prev.womenWearsState,
+          }))
+        }
+        onMouseEnter={() =>
+          cls === "navLists" &&
+          setListState(() => ({
+            menWearsState: false,
+            womenWearsState: true,
+          }))
+        }
+        onMouseLeave={() =>
+          cls === "navLists" &&
+          setListState(() => ({
+            menWearsState: false,
+            womenWearsState: false,
+          }))
+        }
+      >
+        <p
+          className={`mb-0 d-flex justify-content-between align-items-center h-100 ${
+            listState.womenWearsState ? "active" : false
+          }`}
+        >
           <span className="me-1">women wear</span>
           <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
         </p>
         <div className="bar d-none d-lg-block">
           <span></span>
         </div>
-        <div className="weraList">{listsArrRender()}</div>
+        <div
+          className={`weraList ${listState.womenWearsState ? "active" : false}`}
+        >
+          {listsArrRender()}
+        </div>
       </li>
       <li className="navItem">
         <p className="mb-0 d-flex justify-content-between align-items-center h-100">
