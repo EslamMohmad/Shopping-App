@@ -36,6 +36,7 @@ const ProductsSlice = createSlice({
     addToCartState: false,
     loadingState: false,
     productViewDetailstState: false,
+    productsFilterState: [],
   },
   reducers: {
     increase: (state) => {
@@ -74,6 +75,20 @@ const ProductsSlice = createSlice({
       state.productInfo.size = { sizeState: false, result: "" };
       state.addToCartState = false;
       state.productInfo.product = determidProduct;
+    },
+    getFilterdProducts: (state, { payload }) => {
+      const globalProducts = [
+        ...state.bestSellers,
+        ...state.newArrivals,
+      ].filter((product) => {
+        return (
+          payload.category.includes(product.details.category) ||
+          payload.brands.includes(product.details.brand) ||
+          payload.colors.includes(product.details.color) ||
+          payload.prices.includes(product.details.price)
+        );
+      });
+      state.productsFilterState = globalProducts;
     },
   },
   extraReducers: {
@@ -123,6 +138,7 @@ export const {
   viewDetails,
   getProductDetailsFromURLFunc,
   productCartFunc,
+  getFilterdProducts,
 } = ProductsSlice.actions;
 
 export default ProductsSlice.reducer;

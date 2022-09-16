@@ -8,8 +8,8 @@ import "./ProductFilter.css";
 
 const ProductFilter = ({ action }) => {
   return (
-    <ASide cls="aside productFilterSection p-3 px-4">
-      <div className="top d-flex align-items-center mb-3 py-3">
+    <ASide cls="aside productFilterSection p-5 px-4 pt-0">
+      <div className="top d-flex align-items-center mb-3 py-3 position-sticky">
         <span
           className="fs-5 position-absolute"
           onClick={() => action(overLayFunc())}
@@ -20,7 +20,7 @@ const ProductFilter = ({ action }) => {
         <h3 className="mb-0 flex-grow-1 text-center">filter</h3>
       </div>
       <AsideSection />
-      <div className="bottom bg-dark position-sticky text-white text-center py-3">
+      <div className="bottom bg-dark position-fixed text-white text-center py-3">
         9,608 items
       </div>
     </ASide>

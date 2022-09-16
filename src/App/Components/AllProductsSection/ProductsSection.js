@@ -9,7 +9,7 @@ import ProductsOptions from "./ProductsOptions";
 
 const ProductsSection = () => {
   const {
-    ProductsSlice: { bestSellers, newArrivals },
+    ProductsSlice: { bestSellers, newArrivals, productsFilterState },
     ModalSlice: { homeState },
   } = useSelector((state) => state);
 
@@ -17,9 +17,15 @@ const ProductsSection = () => {
 
   useEffect(() => {
     if (!homeState) {
-      dispatch(productData({ state: false, URL: "DataBase/Data.json" }));
+      dispatch(productData({ state: false, URL: "/DataBase/Data.json" }));
     }
   }, [dispatch, homeState]);
+
+  const productsHandler = () => {
+    return productsFilterState.length
+      ? productsFilterState
+      : [...bestSellers, ...newArrivals];
+  };
 
   return (
     <div className="productsSection">
@@ -37,7 +43,7 @@ const ProductsSection = () => {
         </div>
       </div>
       <ProductContainer
-        payload={[...bestSellers, ...newArrivals]}
+        payload={productsHandler()}
         action={dispatch}
         name="casual Wear"
       />

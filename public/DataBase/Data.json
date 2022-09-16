@@ -6,15 +6,27 @@
       "title": "nike black",
       "description": "Casual wear (casual attire or clothing) may be a Western code that’s relaxed, occasional, spontaneous and fitted to everyday use. Casual wear became popular within the Western world",
       "befourSale": "$15.00",
-      "afterSale": "$11.00"
+      "afterSale": "$11.00",
+      "details": {
+        "category": "man",
+        "color": "black",
+        "brand": "fashadil",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 1,
       "img": "BestSellers/BestSellersImgs/p-2.png",
       "title": "hermes cartlon london",
       "description": "Off-White self-striped knitted midi A-line dress, has a scoop neck, sleeveless, straight hem",
-      "befourSale": "$12.30",
-      "afterSale": "$16.38"
+      "befourSale": "$16.38",
+      "afterSale": "$12.30",
+      "details": {
+        "category": "women",
+        "color": "white",
+        "brand": "hoppister",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 2,
@@ -22,7 +34,13 @@
       "title": "gucci cartlon Uk",
       "description": "Knitted midi A-line dress, has a scoop neck, sleeveless, straight hem",
       "befourSale": "$19.99",
-      "afterSale": "$14.99"
+      "afterSale": "$14.99",
+      "details": {
+        "category": "sneakers",
+        "color": "green",
+        "brand": "club shoes",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 3,
@@ -30,7 +48,13 @@
       "title": "regular fit flannel shirt",
       "description": "The garments labelled as Committed are products that have been produced using sustainable fibers or processes, reducing their environmental impact. Mango's goal is to support the implementation of practices more committed to the environment.",
       "befourSale": false,
-      "afterSale": "$8.00"
+      "afterSale": "$8.00",
+      "details": {
+        "category": "man",
+        "color": "black",
+        "brand": "fusion",
+        "price": "$6 to $10"
+      }
     },
     {
       "id": 4,
@@ -38,7 +62,13 @@
       "title": "eco-Friendly clothing brands that",
       "description": "12 Eco-Friendly Clothing Brands That, has a scoop neck, sleeveless, straight hem",
       "befourSale": "$28.00",
-      "afterSale": "$20.00"
+      "afterSale": "$20.00",
+      "details": {
+        "category": "women",
+        "color": "gray",
+        "brand": "blaza fashion",
+        "price": "$15 to $20"
+      }
     },
     {
       "id": 5,
@@ -46,7 +76,13 @@
       "title": "oversized w sweater",
       "description": "Constructed in cotton sweat fabric, this lovely piece, lacus eu mattis auctor, dolor lectus venenatis nulla, at tristique eros sem vel ante. Sed leo enim, iaculis ornare tristique non, vulputate sit amet ante.",
       "befourSale": "$70.00",
-      "afterSale": "$55.00"
+      "afterSale": "$55.00",
+      "details": {
+        "category": "women",
+        "color": "white",
+        "brand": "shovia",
+        "price": "$50 to $100"
+      }
     },
     {
       "id": 6,
@@ -54,7 +90,13 @@
       "title": "regular fit crew-neck t-Shirt",
       "description": "Self-striped knitted midi A-line dress, has a scoop neck, T-shirt, straight hem",
       "befourSale": "$16.38",
-      "afterSale": "$12.30"
+      "afterSale": "$12.30",
+      "details": {
+        "category": "man",
+        "color": "gray",
+        "brand": "shovia",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 7,
@@ -62,15 +104,27 @@
       "title": "zara shoes green",
       "description": "Footwear refers to garments worn on the feet, which originally serves to purpose of protection against adversities of the environment, usually regarding ground textures and temperature.",
       "befourSale": false,
-      "afterSale": "$50.00"
+      "afterSale": "$50.00",
+      "details": {
+        "category": "women",
+        "color": "white",
+        "brand": "fusion",
+        "price": "$20 to $50"
+      }
     },
     {
       "id": 8,
       "img": "BestSellers/BestSellersImgs/p-9.png",
-      "title": "woman fitted neck t-Shirt",
+      "title": "women fitted neck t-Shirt",
       "description": "All about the crisp cut and exceptional quality of the cotton, the Women Fitted V Neck Rib L/S T-Shirt won't be one you will be tossing away ever.",
       "befourSale": "$30.00",
-      "afterSale": "$28.00"
+      "afterSale": "$28.00",
+      "details": {
+        "category": "women",
+        "color": "black",
+        "brand": "elegance",
+        "price": "$20 to $50"
+      }
     },
     {
       "id": 9,
@@ -78,7 +132,13 @@
       "title": "nike shoes",
       "description": "NIKE 2020 Black White is a clean and monochromatic colourway of the label's latest high-technology silhouette. The model first launched late last year and is currently Jordan Brand's flagship performance pair.",
       "befourSale": false,
-      "afterSale": "$39.99"
+      "afterSale": "$39.99",
+      "details": {
+        "category": "sneakers",
+        "color": "black",
+        "brand": "hunter shoes",
+        "price": "$20 to $50"
+      }
     }
   ],
   "newArrivals": [
@@ -88,7 +148,13 @@
       "title": "Armani Veni Vidi Vici",
       "description": "Fendi began life in 1925 as a fur and leather speciality store in Rome.",
       "befourSale": "$20.00",
-      "afterSale": "$17.99"
+      "afterSale": "$17.99",
+      "details": {
+        "category": "women",
+        "color": "white",
+        "brand": "fusion",
+        "price": "$15 to $20"
+      }
     },
     {
       "id": 11,
@@ -96,7 +162,13 @@
       "title": "H&M Global Desi",
       "description": "Blue solid woven regular top, curved hem with tassell detailing has shoulder straps, and sleeveless",
       "befourSale": "$40.00",
-      "afterSale": "$30.00"
+      "afterSale": "$30.00",
+      "details": {
+        "category": "kids",
+        "color": "gray",
+        "brand": "hoppister",
+        "price": "$20 to $50"
+      }
     },
     {
       "id": 12,
@@ -104,7 +176,13 @@
       "title": "Zara Solly White Shirt",
       "description": "For a chic and smart look, don this white shirt from Solly by Allen Solly. Crafted from a cotton-nylon blend with a hint of stretch, this design features a dotted pattern. Wear this 3/4th sleeves shirt with trousers and wedges to a client meeting.",
       "befourSale": "$32.00",
-      "afterSale": "$25.00"
+      "afterSale": "$25.00",
+      "details": {
+        "category": "women",
+        "color": "white",
+        "brand": "shovia",
+        "price": "$20 to $50"
+      }
     },
     {
       "id": 13,
@@ -112,7 +190,13 @@
       "title": "Hermes  Carlton London",
       "description": "Off-White self-striped knitted midi A-line dress, has a scoop neck, sleeveless, straight hem",
       "befourSale": false,
-      "afterSale": "$15.00"
+      "afterSale": "$15.00",
+      "details": {
+        "category": "women",
+        "color": "white",
+        "brand": "blaza fashion",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 14,
@@ -120,7 +204,13 @@
       "title": "Scuba Stand Collar Topper Jacket",
       "description": "Zara provides only the highest-quality selection of dresses, womens suits, and suited separates.",
       "befourSale": "$16.00",
-      "afterSale": "$12.00"
+      "afterSale": "$12.00",
+      "details": {
+        "category": "women",
+        "color": "yellow",
+        "brand": "blaza fashion",
+        "price": "$15 to $20"
+      }
     },
     {
       "id": 15,
@@ -128,7 +218,13 @@
       "title": "Armani Wide-Leg Trousers",
       "description": "Monochrome elegance. Made with a relaxed wide-leg, these trousers are made from a sustainable soft organic cotton with a mechanical stretch making the garment easily recycled.",
       "befourSale": "$80.00",
-      "afterSale": "$60.00"
+      "afterSale": "$60.00",
+      "details": {
+        "category": "man",
+        "color": "black",
+        "brand": "blaza fashion",
+        "price": "$50 to $100"
+      }
     },
     {
       "id": 16,
@@ -136,7 +232,13 @@
       "title": "Short Sleeve Shirts For Men",
       "description": "From casual days out to parties, dinners and other events that call for a dressier look, a short sleeve shirt is a versatile piece that works for all kinds of occasions.",
       "befourSale": "$18.99",
-      "afterSale": "$12.99"
+      "afterSale": "$12.99",
+      "details": {
+        "category": "man",
+        "color": "brown",
+        "brand": "elegance",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 17,
@@ -144,7 +246,13 @@
       "title": "Blazer And A Neck Scarf",
       "description": "blue short sleeve basic midi dress featuring a crew neckline in a jersey fabric.",
       "befourSale": "$23.00",
-      "afterSale": "$13.00"
+      "afterSale": "$13.00",
+      "details": {
+        "category": "women",
+        "color": "brown",
+        "brand": "fashadil",
+        "price": "$10 to $15"
+      }
     },
     {
       "id": 18,
@@ -152,7 +260,13 @@
       "title": "Zara Shoes Green",
       "description": "NIKE 2020 Black White is a clean and monochromatic colourway",
       "befourSale": "$30.00",
-      "afterSale": "$28.00"
+      "afterSale": "$28.00",
+      "details": {
+        "category": "sneakers",
+        "color": "green",
+        "brand": "club shoes",
+        "price": "$20 to $50"
+      }
     },
     {
       "id": 19,
@@ -160,7 +274,13 @@
       "title": "Maniac Red Boys",
       "description": "Sporty essentials, these Under Armour athletic shorts are smooth and lightweight in moisture-wicking material.",
       "befourSale": "$300.00",
-      "afterSale": "$250.00"
+      "afterSale": "$250.00",
+      "details": {
+        "category": "kids",
+        "color": "red",
+        "brand": "hoppister",
+        "price": "over $200"
+      }
     }
   ]
 }

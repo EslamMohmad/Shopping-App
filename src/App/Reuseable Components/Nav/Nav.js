@@ -106,8 +106,6 @@ const Nav = ({ cls }) => {
           }))
         }
         onMouseEnter={() => {
-          console.log(cls);
-
           return (
             cls === "navLists" &&
             setListState(() => ({

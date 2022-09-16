@@ -234,7 +234,7 @@ const ProductDetailsSection = () => {
           </div>
         </div>
       </div>
-      <div className="row mx-0 px-0">
+      <div className="products row mx-0 px-0">
         <ProductContainer
           payload={bestSellers.slice(0, 5)}
           action={action}

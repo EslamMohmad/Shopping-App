@@ -5,6 +5,16 @@
   width: 100%;
 }
 
+.productFilterSection .top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 450px;
+}
+
 .productFilterSection .bottom {
-  bottom: 0rem;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  max-width: 450px;
 }
