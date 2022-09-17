@@ -72,7 +72,13 @@ const AsideSection = () => {
           onChange={({ target }) => tagsStateHandler(target)}
           checked={tags[sectionName].includes(item)}
         />
-        <label htmlFor={item} style={{ cursor: "pointer" }}>
+        <label
+          htmlFor={item}
+          style={{ cursor: "pointer" }}
+          onTouchStart={({ target }) =>
+            target.control.checked === tags[sectionName].includes(item)
+          }
+        >
           {item}
         </label>
       </div>

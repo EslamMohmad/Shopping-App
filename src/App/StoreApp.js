@@ -9,6 +9,7 @@ import Main from "./Components/Main";
 import ProductDetailsSection from "./Components/ProductDetailsSection/ProductDetailsSection";
 import MyAccount from "./Components/MyAccount/MyAccount";
 import AllProductsSection from "./Components/AllProductsSection/AllProductsSection";
+import PageNotFound from "./Components/PageNotFound/PageNotFound";
 
 const StoreApp = () => {
   return (
@@ -19,17 +20,19 @@ const StoreApp = () => {
         style={{ marginTop: "95px", minHeight: "calc(100vh - 95px)" }}
       >
         <Routes>
-          <Route path="/Shopping-App/" element={<Main />} />
+          <Route path="Shopping-App" element={<Main />} />
           <Route
-            path="/Shopping-App/products/product/:id"
+            path="Shopping-App/products/product/:id"
             element={<ProductDetailsSection />}
           />
-          <Route path="Shopping-App/*" element={<MyAccount />} />
+          <Route path="Shopping-App/myAccount/*" element={<MyAccount />} />
           <Route
-            path="/Shopping-App/products"
+            path="Shopping-App/products"
             element={<AllProductsSection />}
           />
+          <Route path="Shopping-App/*" element={<PageNotFound />} />
         </Routes>
+
         <FooterSection />
       </div>
       <Modal />

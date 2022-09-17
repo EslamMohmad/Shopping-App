@@ -14,10 +14,10 @@ import useScrollToTop from "./../../Hooks/useScrollToTop";
 
 const MyAccount = () => {
   const AsideLinks = [
-    { text: "dashboard", link: "myAccount" },
-    { text: "orders", link: "myAccount/orders" },
-    { text: "account details", link: "myAccount/accountDetails" },
-    { text: "change password", link: "myAccount/changePassword" },
+    { text: "dashboard", link: "" },
+    { text: "orders", link: "orders" },
+    { text: "account details", link: "accountDetails" },
+    { text: "change password", link: "changePassword" },
   ];
 
   const action = useDispatch();
@@ -54,16 +54,10 @@ const MyAccount = () => {
             </aside>
             <div className="section col-12 col-lg-9 px-0">
               <Routes>
-                <Route path="myAccount" element={<DashBoard />} />
-                <Route path="myAccount/orders" element={<Orders />} />
-                <Route
-                  path="myAccount/accountDetails"
-                  element={<AccountDetails />}
-                />
-                <Route
-                  path="myAccount/changePassword"
-                  element={<ChangePassword />}
-                />
+                <Route path="*" element={<DashBoard />} />
+                <Route path="orders" element={<Orders />} />
+                <Route path="accountDetails" element={<AccountDetails />} />
+                <Route path="changePassword" element={<ChangePassword />} />
               </Routes>
             </div>
           </div>
