@@ -1,0 +1,122 @@
+.aside.cartSection .parent {
+  height: calc(100% - 105px);
+}
+
+.aside.cartSection .products {
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.aside.cartSection .products .product .img {
+  width: 150px;
+}
+
+.aside.cartSection .products .product img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aside.cartSection .products .product .content {
+  width: 350px;
+  max-width: 350px;
+}
+
+.aside.cartSection .products .product .content p {
+  font-size: 14px;
+}
+
+.aside.cartSection .products .product .content p:first-child span {
+  max-width: 150px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.aside.cartSection .products .product .content p:nth-of-type(2) {
+  color: #acacac;
+}
+
+.aside.cartSection .products .product .content .count {
+  width: 55%;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.aside.cartSection .products .product .content .count button {
+  border: none;
+  outline: none;
+  font-size: 18px;
+  transition: 0.3s ease;
+  transition-property: color, background-color;
+}
+
+.aside.cartSection .products .product .content .count button:hover {
+  background-color: black;
+  color: white;
+}
+
+.aside.cartSection .products .product .content .count p {
+  border: 1px solid lightgray;
+  border-top: none;
+  border-bottom: none;
+  text-align: center;
+  line-height: 42px;
+}
+
+.aside.cartSection .products .product .deleteItem {
+  top: -10px;
+  left: -10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: -4px -4px 15px #dbdbdb;
+  transition: 0.2s ease background-color, color;
+}
+
+.aside.cartSection .products .product .deleteItem:hover {
+  background-color: black;
+  color: white;
+}
+
+.aside.cartSection .cartBtn {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.aside.cartSection .cartBtn button {
+  background-color: rgb(153, 153, 153);
+  border: none;
+  outline: none;
+  color: white;
+  padding: 15px 15px;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside.cartSection .cartBtn.active button {
+  background-color: black;
+}
+
+@media (max-width: 467px) {
+  .aside.cartSection .products .product .content .bot {
+    flex-direction: column-reverse;
+    align-items: flex-start !important;
+  }
+
+  .aside.cartSection .products .product .content .bot > div {
+    width: 100%;
+  }
+
+  .aside.cartSection .products .product .content .bot > p {
+    margin-bottom: 15px !important;
+  }
+}

@@ -1,0 +1,94 @@
+.checkout-section .row:first-child {
+  margin-bottom: 80px !important;
+}
+
+.checkout-section .img {
+  height: 400px;
+  width: 100%;
+}
+
+.checkout-section .img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.checkout-section .text {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.checkout-section .text p {
+  font-family: fantasy;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.checkout-section .shippingAddressFrom input,
+.checkout-section .shippingAddressFrom textarea {
+  border: 1px solid lightgray;
+  outline: none;
+}
+
+.checkout-section .shippingAddressFrom input[type="checkbox"] {
+  accent-color: black;
+  width: 20px !important;
+  height: 20px;
+}
+
+.checkout-section .shippingAddressFrom input[type="checkbox"]:after {
+  content: attr(value);
+  vertical-align: top;
+  white-space: wrap;
+  display: inline-block;
+  position: absolute;
+  left: 60px;
+}
+
+.checkout-section .shippingAddressFrom textarea {
+  min-height: 100px;
+  resize: unset;
+  padding: 10px;
+}
+
+.checkout-section .shippingAddressFrom textarea:focus,
+.checkout-section .shippingAddressFrom input:focus {
+  border-color: black;
+}
+
+.checkout-section .shippingAddressFrom input[type="checkbox"]:focus {
+  border: 1px solid black;
+}
+
+.checkout-section .shippingAddressFrom label {
+  user-select: none;
+}
+
+.checkout-section .yourOrders .products {
+  max-height: 327px;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+.checkout-section .yourOrders .products::-webkit-scrollbar {
+  width: 5px;
+}
+
+.checkout-section .yourOrders .product p {
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .checkout-section .row:first-child {
+    margin-bottom: 50px !important;
+  }
+
+  .checkout-section .img {
+    height: 250px;
+  }
+}
