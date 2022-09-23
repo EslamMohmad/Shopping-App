@@ -282,5 +282,55 @@
         "price": "over $200"
       }
     }
+  ],
+  "flashSale": [
+    {
+      "id": 20,
+      "img": "FlashSale/sm-img-1.png",
+      "title": "nike shoes",
+      "description": "nike 2022 black white",
+      "befourSale": "$80.00",
+      "afterSale": "$50.00",
+      "sold": 120,
+      "available": 147,
+      "details": {
+        "category": "sneakers",
+        "color": "black",
+        "brand": "Hunter Shoes",
+        "price": "$50 to $100"
+      }
+    },
+    {
+      "id": 21,
+      "img": "FlashSale/sm-img-2.png",
+      "title": "wayfarer sunglasses",
+      "description": "our optical engineers",
+      "befourSale": "$120.00",
+      "afterSale": "$80.00",
+      "sold": 180,
+      "available": 140,
+      "details": {
+        "category": "sunglass",
+        "color": "red",
+        "brand": "hoppister",
+        "price": "$100 to $200"
+      }
+    },
+    {
+      "id": 22,
+      "img": "FlashSale/sm-img-3.png",
+      "title": "REDQ steel watch",
+      "description": "the black celebrate",
+      "befourSale": "$25.00",
+      "afterSale": "$20.00",
+      "sold": 120,
+      "available": 147,
+      "details": {
+        "category": "watch",
+        "color": "white",
+        "brand": "fashadil",
+        "price": "$20 to $50"
+      }
+    }
   ]
 }

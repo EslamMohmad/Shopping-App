@@ -1,11 +1,13 @@
 {
   "files": {
-    "main.css": "/Shopping-App/static/css/main.32794151.css",
-    "main.js": "/Shopping-App/static/js/main.547c2d5a.js",
+    "main.css": "/Shopping-App/static/css/main.16e51149.css",
+    "main.js": "/Shopping-App/static/js/main.5a151b98.js",
+    "static/media/404.svg": "/Shopping-App/static/media/404.0cbea68c966d6d556cd98274623da287.svg",
     "static/media/banner-1.jpg": "/Shopping-App/static/media/banner-1.137f87415a0694ac106a.jpg",
     "static/media/banner-3.jpg": "/Shopping-App/static/media/banner-3.933bdf6f18d5b1e9df15.jpg",
     "static/media/banner-2.jpg": "/Shopping-App/static/media/banner-2.74c82c17bbca97b02f65.jpg",
     "static/media/headerImg.jpg": "/Shopping-App/static/media/headerImg.b5776a82c54247462413.jpg",
+    "static/media/page-header.jpg": "/Shopping-App/static/media/page-header.b5776a82c54247462413.jpg",
     "static/media/play-store.svg": "/Shopping-App/static/media/play-store.104c2fa83bf371f657741af08c97ff76.svg",
     "static/media/p-10.png": "/Shopping-App/static/media/p-10.a615881f1abfc501592e.png",
     "static/media/p-2.png": "/Shopping-App/static/media/p-2.5eada6686aa300632785.png",
@@ -47,11 +49,11 @@
     "static/media/sm-img-2.png": "/Shopping-App/static/media/sm-img-2.d14ebe3bd3073bba3e69.png",
     "static/media/app-store.svg": "/Shopping-App/static/media/app-store.c4382818bcba5334704d63cc04b5b7a6.svg",
     "index.html": "/Shopping-App/index.html",
-    "main.32794151.css.map": "/Shopping-App/static/css/main.32794151.css.map",
-    "main.547c2d5a.js.map": "/Shopping-App/static/js/main.547c2d5a.js.map"
+    "main.16e51149.css.map": "/Shopping-App/static/css/main.16e51149.css.map",
+    "main.5a151b98.js.map": "/Shopping-App/static/js/main.5a151b98.js.map"
   },
   "entrypoints": [
-    "static/css/main.32794151.css",
-    "static/js/main.547c2d5a.js"
+    "static/css/main.16e51149.css",
+    "static/js/main.5a151b98.js"
   ]
 }
