@@ -1,7 +1,7 @@
 .productInfoSection {
   width: 900px;
   max-width: 900px;
-  max-height: 100%;
+  max-height: 700px;
   animation: scaleEnd 0.4s;
 }
 
@@ -36,4 +36,10 @@
   background-color: white;
   top: -15px;
   right: -15px;
+}
+
+@media (max-height: 740px) {
+  .productInfoSection {
+    max-height: 100%;
+  }
 }

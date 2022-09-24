@@ -3,13 +3,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { productFilterFunc } from "../../Store/ModalSlice";
 
 import ProductContainer from "./../../Reuseable Components/ProductContainer/ProductContainer";
-import { productData } from "./../../Store/ProductsSlice";
+import {
+  productData,
+  getProductDetailsFromURLFunc,
+} from "./../../Store/ProductsSlice";
 import FiltersButton from "./FiltersButton";
 import ProductsOptions from "./ProductsOptions";
 
 const ProductsSection = () => {
   const {
-    ProductsSlice: { bestSellers, newArrivals, flashSale, productsFilterState },
+    ProductsSlice: {
+      bestSellers,
+      newArrivals,
+      flashSale,
+      productsFilterState,
+      productInfo: { product, name },
+    },
     ModalSlice: { homeState },
   } = useSelector((state) => state);
 
@@ -18,8 +27,9 @@ const ProductsSection = () => {
   useEffect(() => {
     if (!homeState) {
       dispatch(productData({ state: false, URL: "/DataBase/Data.json" }));
+      dispatch(getProductDetailsFromURLFunc(product));
     }
-  }, [dispatch, homeState]);
+  }, [dispatch, homeState, product]);
 
   const productsHandler = () => {
     return productsFilterState.length
@@ -45,7 +55,7 @@ const ProductsSection = () => {
       <ProductContainer
         payload={productsHandler()}
         action={dispatch}
-        name="casual Wear"
+        name={name}
       />
     </div>
   );

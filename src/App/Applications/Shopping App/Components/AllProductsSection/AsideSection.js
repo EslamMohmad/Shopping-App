@@ -133,11 +133,9 @@ const AsideSection = () => {
         style={{ cursor: "pointer" }}
         onChange={({ target }) => tagsStateHandler(target)}
         checked={tags.colors.includes(color)}
+        value={color}
       />
-      <label htmlFor={color} style={{ cursor: "pointer" }}>
-        <span className="color mx-2" style={{ backgroundColor: color }}></span>
-        {color}
-      </label>
+      <span className="color mx-2" style={{ backgroundColor: color }}></span>
     </div>
   ));
 

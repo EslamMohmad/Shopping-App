@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 import { overLayFunc, backToHomeFunc, productInfoFunc } from "./ModalSlice";
 
+import { inputState } from "./SearchSlice";
+
 export const productData = createAsyncThunk(
   "products/productData",
   async (payload, thunkAPI) => {
@@ -38,6 +40,7 @@ const ProductsSlice = createSlice({
     loadingState: false,
     productViewDetailstState: false,
     productsFilterState: [],
+    productsFilterSearchState: [],
   },
   reducers: {
     increase: (state) => {
@@ -135,12 +138,10 @@ const ProductsSlice = createSlice({
       state.productInfo.name = name;
     },
     [overLayFunc]: (state) => {
-      if (!state.productViewDetailstState) {
-        state.productInfo.amount = 1;
-        state.productInfo.color = { colorState: false, result: "" };
-        state.productInfo.size = { sizeState: false, result: "" };
-        state.addToCartState = false;
-      }
+      state.productInfo.amount = 1;
+      state.productInfo.color = { colorState: false, result: "" };
+      state.productInfo.size = { sizeState: false, result: "" };
+      state.addToCartState = false;
     },
     [backToHomeFunc]: (state) => {
       state.productInfo.amount = 1;
@@ -148,6 +149,16 @@ const ProductsSlice = createSlice({
       state.productInfo.color = { colorState: false, result: "" };
       state.productInfo.size = { sizeState: false, result: "" };
       state.productViewDetailstState = false;
+    },
+
+    [inputState]: (state, { payload }) => {
+      const filtedProducts = [
+        ...state.bestSellers,
+        ...state.newArrivals,
+        ...state.flashSale,
+      ].filter((product) => product.details.category.includes(payload));
+
+      state.productsFilterSearchState = filtedProducts;
     },
   },
 });

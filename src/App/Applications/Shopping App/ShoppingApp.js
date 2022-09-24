@@ -20,7 +20,10 @@ const ShoppingApp = () => {
       <Header />
       <div
         className="container-fluid px-4 parentContainer d-flex flex-column justify-content-between"
-        style={{ marginTop: "95px", minHeight: "calc(100vh - 95px)" }}
+        style={{
+          marginTop: "calc(80px + 1.5rem)",
+          minHeight: "calc(100vh - 95px)",
+        }}
       >
         <Routes>
           <Route path="Shopping-App" element={<Main />} />

@@ -8,12 +8,18 @@
   height: 20px;
   appearance: none;
   outline: none;
+  position: relative;
 }
 
 .asideSection input[type="checkbox"]::after {
   content: attr(value);
   position: absolute;
-  left: 90px;
+  left: 30px;
+  min-width: 100px;
+}
+
+.asideSection .colors input[type="checkbox"]::after {
+  left: 60px;
 }
 
 .asideSection input[type="checkbox"]:checked {

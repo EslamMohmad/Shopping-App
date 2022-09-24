@@ -20,7 +20,7 @@ const Modal = () => {
 
   return ReactDOM.createPortal(
     <OverLaySection props={state.ModalSlice} action={dispatch}>
-      <CartSection data={state.cartSlice} action={dispatch} />
+      <CartSection data={state.CartSlice} action={dispatch} />
       <SearchSection
         data={state.SearchSlice}
         action={dispatch}

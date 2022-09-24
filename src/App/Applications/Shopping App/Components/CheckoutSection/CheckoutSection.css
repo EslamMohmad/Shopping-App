@@ -48,6 +48,7 @@
   display: inline-block;
   position: absolute;
   left: 60px;
+  padding-right: 24px;
 }
 
 .checkout-section .shippingAddressFrom textarea {

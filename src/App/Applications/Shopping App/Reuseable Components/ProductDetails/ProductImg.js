@@ -9,9 +9,12 @@ const ProductImg = ({ width, targetImg }) => {
   const imgStylesHandler = () =>
     name === "bestSellers" || name === "newArrivals"
       ? { objectFit: "cover", width: "100%", height: "100%" }
-      : { objectFit: "contain", width: "75%", height: "75%" };
-
-  console.log(name);
+      : {
+          objectFit: "contain",
+          width: "75%",
+          height: "75%",
+          objectPosition: "center",
+        };
 
   return (
     <div

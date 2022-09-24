@@ -9,7 +9,7 @@ const AllProductsSection = () => {
   useScrollToTop();
 
   return (
-    <div className="allProductsSection container-fluid px-0 pt-4">
+    <div className="allProductsSection container-fluid px-0 pt-lg-4">
       <div className="row mx-0 justify-content-around">
         <div className="col-3 col-xl-2 px-0 d-none d-lg-block">
           <AsideSection />

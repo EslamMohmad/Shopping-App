@@ -18,4 +18,4 @@ const BackToHome = ({ children }) => {
   );
 };
 
-export default BackToHome;
+export default React.memo(BackToHome);

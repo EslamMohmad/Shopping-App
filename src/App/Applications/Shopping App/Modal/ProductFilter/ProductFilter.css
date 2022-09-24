@@ -9,6 +9,7 @@
   left: 0;
   width: 100%;
   max-width: 450px;
+  z-index: 1;
 }
 
 .productFilterSection .bottom {

@@ -7,7 +7,7 @@ import { cartFunc } from "../../Store/ModalSlice";
 import style from "./Cart.module.css";
 
 const AddCart = () => {
-  const { products } = useSelector((state) => state.cartSlice);
+  const { products } = useSelector((state) => state.CartSlice);
 
   const dispatch = useDispatch();
 

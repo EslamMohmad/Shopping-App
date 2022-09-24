@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Icon from "../../Reuseable Components/Icon/Icon";
-import { getSearchResults, inputState } from "../../Store/SearchSlice";
+import { inputState } from "../../Store/SearchSlice";
 import useFocus from "../../Hooks/useFocus";
 import "./SearchSection.css";
 import { getSearchedProduct } from "../../Store/ProductsSlice";
@@ -11,10 +11,13 @@ import { useSelector } from "react-redux";
 const SearchSection = ({ data, action, sectionState }) => {
   const [inputRef, setInputRef] = useFocus();
 
-  const { overLayState } = useSelector(({ ModalSlice }) => ModalSlice);
+  const {
+    ProductsSlice: { productsFilterSearchState },
+    SearchSlice: { inputValue },
+  } = useSelector((state) => state);
 
   const searchItemRender = () =>
-    data.results.map((product) => (
+    productsFilterSearchState.map((product) => (
       <Link
         to={`/Shopping-App/products/product/${product.id}`}
         className="product mb-4 pointer"
@@ -44,22 +47,9 @@ const SearchSection = ({ data, action, sectionState }) => {
       </Link>
     ));
 
-  useEffect(() => {
-    const depounce = setTimeout(() => {
-      action(getSearchResults(inputRef.current.value));
-    }, 1500);
-
-    !sectionState && (inputRef.current.value = "");
-
-    return () => clearTimeout(depounce);
-  }, [data.inputValue, action, inputRef, sectionState, overLayState]);
-
   return (
     <div className="searchSection">
-      <form
-        className="h-100 d-flex flex-column"
-        onChange={({ target }) => action(inputState(target.value))}
-      >
+      <form className="h-100 d-flex flex-column">
         <div className="search mb-2" onClick={(e) => e.stopPropagation()}>
           <div className="result-icon">
             <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
@@ -69,6 +59,8 @@ const SearchSection = ({ data, action, sectionState }) => {
             placeholder="search..."
             ref={inputRef}
             focus={`${sectionState}`}
+            value={inputValue}
+            onChange={({ target }) => action(inputState(target.value))}
           />
           <button
             type="reset"

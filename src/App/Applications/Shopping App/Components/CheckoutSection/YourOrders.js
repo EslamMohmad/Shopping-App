@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const YourOrders = () => {
-  const { products } = useSelector(({ cartSlice }) => cartSlice);
+  const { products } = useSelector(({ CartSlice }) => CartSlice);
 
   const totlaPriceFunc = () => {
     if (!products.length) {
