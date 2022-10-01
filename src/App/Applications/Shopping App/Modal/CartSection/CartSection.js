@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ASide from "../../Reuseable Components/ASide/ASide";
 import CloseSection from "../../Reuseable Components/CloseSection/CloseSection";
 import Icon from "../../Reuseable Components/Icon/Icon";
@@ -15,6 +15,8 @@ import { viewDetails, productCartFunc } from "../../Store/ProductsSlice";
 import "./CartSection.css";
 
 const CartSection = ({ data: { products }, action }) => {
+  const [storage, setStorage] = useState([]);
+
   const itemHandler = () =>
     products.map(({ id, imgsrc, amount, price, title, color, size }, idx) => (
       <div className="product rounded  mb-4 position-relative" key={idx}>
@@ -84,6 +86,31 @@ const CartSection = ({ data: { products }, action }) => {
       .reduce((prev, curr) => parseFloat(prev) + parseFloat(curr), initialValue)
       .toFixed(2);
   };
+
+  //;
+
+  useEffect(() => {
+    if (localStorage.hasOwnProperty("AllProducts")) {
+      localStorage.setItem("AllProducts", JSON.stringify(products));
+    } else {
+      localStorage.setItem("AllProducts", "[]");
+    }
+
+    setStorage((prev) => [
+      ...prev,
+      ...JSON.parse(localStorage.getItem("AllProducts")),
+    ]);
+    // if (localStorage.length > 1) {
+    //   setStorage((prev) => [
+    //     ...prev,
+    //     ...JSON.parse(localStorage.getItem("AllProducts")),
+    //   ]);
+    //   localStorage.setItem("AllProducts", JSON.stringify(storage));
+    //   // JSON.parse(localStorage.getItem("AllProducts")).push([...storage]);
+    // } else {
+    //   localStorage.setItem("AllProducts", JSON.stringify(products));
+    // }
+  }, [products]);
 
   return (
     <ASide cls="aside cartSection">

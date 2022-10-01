@@ -22,7 +22,7 @@ const ShoppingApp = () => {
         className="container-fluid px-4 parentContainer d-flex flex-column justify-content-between"
         style={{
           marginTop: "calc(80px + 1.5rem)",
-          minHeight: "calc(100vh - 95px)",
+          minHeight: "calc(100vh - 80px)",
         }}
       >
         <Routes>
@@ -33,7 +33,7 @@ const ShoppingApp = () => {
           />
           <Route path="Shopping-App/myAccount/*" element={<MyAccount />} />
           <Route
-            path="Shopping-App/products"
+            path="Shopping-App/products/*"
             element={<AllProductsSection />}
           />
           <Route path="Shopping-App/checkout" element={<CheckoutSection />} />

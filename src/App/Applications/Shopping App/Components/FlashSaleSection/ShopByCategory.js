@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import img1 from "./Imgs/SBG-1.jpg";
 import img2 from "./Imgs/SBG-2.jpg";
@@ -25,13 +26,13 @@ const ShopByCategory = () => {
 
   const categoryRender = () =>
     categoryArr.map(({ src, title }, idx) => (
-      <div className="section" key={idx}>
+      <Link to={`products/${title}`} className="section" key={idx}>
         <div className="img overflow-hidden position-relative rounded-circle ">
           <img className="w-100" src={src} alt={title} />
           <Icon prefix={"fa-solid"} icon={"fa-link"} />
         </div>
         <p className="title text-center fw-bold mt-3 mb-auto">{title}</p>
-      </div>
+      </Link>
     ));
 
   const responsive = {

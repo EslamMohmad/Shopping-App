@@ -83,7 +83,7 @@ const ShippingAddressFrom = () => {
         </div>
       </div>
       <div className="row mb-4">
-        <div className="col-12 px-2">
+        <div className="col-12 position-relative px-2">
           <input
             className="rounded overflow-hidden w-auto border-1 p-2 me-3"
             type="checkbox"

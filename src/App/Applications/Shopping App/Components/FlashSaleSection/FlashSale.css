@@ -31,9 +31,20 @@
 }
 
 .FlashSaleSection .banner:hover::before,
-.FlashSaleSection .maxSlider .swiper-slide:hover::before {
+.FlashSaleSection .maxSlider .swiper-slide-active::before {
   left: 100%;
-  transition: 0.8s ease left;
+  transition: 0.8s ease;
+}
+
+@media (min-width: 567px) {
+  .FlashSaleSection .maxSlider .swiper-slide-next::before {
+    left: 100%;
+    transition: 0.8s ease left;
+  }
+
+  .FlashSaleSection .maxSlider .swiper-slide-active::before {
+    display: none;
+  }
 }
 
 .minSlider {

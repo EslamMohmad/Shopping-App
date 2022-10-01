@@ -43,11 +43,8 @@
 
 .checkout-section .shippingAddressFrom input[type="checkbox"]:after {
   content: attr(value);
-  vertical-align: top;
-  white-space: wrap;
-  display: inline-block;
   position: absolute;
-  left: 60px;
+  left: 40px;
   padding-right: 24px;
 }
 

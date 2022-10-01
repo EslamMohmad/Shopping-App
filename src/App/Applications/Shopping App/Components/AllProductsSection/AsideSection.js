@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -8,14 +8,60 @@ import BackToHome from "./../../Reuseable Components/BackToHome/BackToHome";
 import "./AsideSection.css";
 
 const AsideSection = () => {
-  const tagsObjects = {
+  const tagsObjectsState = {
     category: [],
     brands: [],
     prices: [],
     colors: [],
   };
 
-  const [tags, setTages] = useState(tagsObjects);
+  const sectionOfTags = useMemo(
+    () => ({
+      category: [
+        "women",
+        "man",
+        "watch",
+        "kids",
+        "sports",
+        "sunglass",
+        "bags",
+        "sneakers",
+      ],
+      brands: [
+        "shovia",
+        "fusion",
+        "hunter shoes",
+        "club shoes",
+        "hoppister",
+        "blaza fashion",
+        "elegance",
+        "fashadil",
+      ],
+      prices: [
+        "under $6",
+        "$6 to $10",
+        "$10 to $15",
+        "$15 to $20",
+        "$20 to $50",
+        "$50 to $100",
+        "$100 to $200",
+        "over $200",
+      ],
+      colorsArr: [
+        "black",
+        "blue",
+        "green",
+        "yellow",
+        "red",
+        "brown",
+        "gray",
+        "white",
+      ],
+    }),
+    []
+  );
+
+  const [tags, setTages] = useState(tagsObjectsState);
 
   const action = useDispatch();
 
@@ -62,7 +108,11 @@ const AsideSection = () => {
 
   const sectionRender = (array, sectionName) => {
     return array.map((item, index) => (
-      <div className="mb-3 d-flex align-items-center parent" key={index}>
+      <Link
+        to={item}
+        className="mb-3 d-flex align-items-center parent"
+        key={index}
+      >
         <input
           className="rounded"
           type="checkbox"
@@ -73,71 +123,30 @@ const AsideSection = () => {
           checked={tags[sectionName].includes(item)}
           value={item}
         />
-      </div>
+        {sectionName === "colors" && (
+          <span className="color mx-2" style={{ backgroundColor: item }}></span>
+        )}
+      </Link>
     ));
   };
 
+  // const { "*": sectionName } = useParams();
+
+  // useEffect(() => {
+  //   if (sectionName) {
+  //     const detectTagSection = Object.keys(sectionOfTags).filter((section) =>
+  //       sectionOfTags[section].find((tag) => tag === sectionName)
+  //     );
+  //     setTages((prev) => ({
+  //       ...prev,
+  //       [detectTagSection]: [...prev[detectTagSection], sectionName],
+  //     }));
+  //   }
+  // }, [sectionName, sectionOfTags]);
+
   useEffect(() => {
     action(getFilterdProducts(tags));
-  }, [tags, action]);
-
-  const categoryArr = [
-    "women",
-    "man",
-    "watch",
-    "kids",
-    "sports",
-    "sunglass",
-    "bags",
-    "sneakers",
-  ];
-
-  const brandsArr = [
-    "shovia",
-    "fusion",
-    "hunter shoes",
-    "club shoes",
-    "hoppister",
-    "blaza fashion",
-    "elegance",
-    "fashadil",
-  ];
-
-  const priceArr = [
-    "under $6",
-    "$6 to $10",
-    "$10 to $15",
-    "$15 to $20",
-    "$20 to $50",
-    "$50 to $100",
-    "$100 to $200",
-    "over $200",
-  ];
-
-  const colorsArr = [
-    "black",
-    "blue",
-    "green",
-    "yellow",
-    "red",
-    "brown",
-    "gray",
-    "white",
-  ].map((color, index) => (
-    <div className="mb-2 d-flex align-items-center parent" key={index}>
-      <input
-        className="rounded"
-        type="checkbox"
-        id={color}
-        name="colors"
-        style={{ cursor: "pointer" }}
-        onChange={({ target }) => tagsStateHandler(target)}
-        checked={tags.colors.includes(color)}
-        value={color}
-      />
-      <span className="color mx-2" style={{ backgroundColor: color }}></span>
-    </div>
-  ));
+  }, [action, tags]);
 
   return (
     <div className="asideSection">
@@ -155,7 +164,7 @@ const AsideSection = () => {
           <h5 className="mb-0">filter</h5>
           <span
             style={{ fontSize: "13px", cursor: "pointer" }}
-            onClick={() => setTages(tagsObjects)}
+            onClick={() => setTages(tagsObjectsState)}
           >
             clear all
           </span>
@@ -164,19 +173,19 @@ const AsideSection = () => {
       </div>
       <div className="category border-bottom pb-4 mb-4">
         <h5 className="mb-4">category</h5>
-        <div>{sectionRender(categoryArr, "category")}</div>
+        <div>{sectionRender(sectionOfTags.category, "category")}</div>
       </div>
       <div className="brands border-bottom pb-4 mb-4">
         <h5 className="mb-4">brands</h5>
-        <div>{sectionRender(brandsArr, "brands")}</div>
+        <div>{sectionRender(sectionOfTags.brands, "brands")}</div>
       </div>
       <div className="prices border-bottom pb-4 mb-4">
         <h5 className="mb-4">price</h5>
-        <div>{sectionRender(priceArr, "prices")}</div>
+        <div>{sectionRender(sectionOfTags.prices, "prices")}</div>
       </div>
       <div className="colors border-bottom pb-4">
         <h5 className="mb-4">colors</h5>
-        <div>{colorsArr}</div>
+        <div>{sectionRender(sectionOfTags.colorsArr, "colors")}</div>
       </div>
     </div>
   );

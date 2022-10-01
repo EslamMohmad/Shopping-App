@@ -11,7 +11,7 @@ const CheckoutSection = () => {
 
   return (
     <div className="checkout-section">
-      <div className="row" style={{ margin: "0 -24px" }}>
+      <div className="row" style={{ margin: "-24px -24px 0" }}>
         <div className="col-auto p-0 w-100">
           <div className="img position-relative">
             <img

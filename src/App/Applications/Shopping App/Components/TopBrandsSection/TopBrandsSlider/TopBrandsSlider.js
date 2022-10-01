@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import SwiperContainer from "../../../Reuseable Components/SwiperContainer/SwiperContainer";
 
@@ -6,14 +7,20 @@ import brands from "./TopBrandsImgs";
 
 const TopBrandsSlider = () => {
   const brandsRender = () =>
-    brands.map(({ imgSrc, name }, idx) => (
-      <div className="brand" key={idx}>
-        <div className="img">
-          <img src={imgSrc} alt="img" width="100%" height="100%" />
-        </div>
-        <p className="text-center">{name}</p>
-      </div>
-    ));
+    brands.map(({ imgSrc, name }, idx) => {
+      return (
+        <Link
+          to={`products/${name.replace("%20", " ")}`}
+          className="brand"
+          key={idx}
+        >
+          <div className="img">
+            <img src={imgSrc} alt="img" width="100%" height="100%" />
+          </div>
+          <p className="text-center">{name}</p>
+        </Link>
+      );
+    });
 
   const responsive = {
     300: {

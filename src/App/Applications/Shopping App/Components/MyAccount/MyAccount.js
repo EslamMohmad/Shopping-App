@@ -26,7 +26,7 @@ const MyAccount = () => {
 
   return (
     <div className="myAccount">
-      <div className="headerImg" style={{ margin: "0 -24px" }}>
+      <div className="headerImg" style={{ margin: "-24px -24px 0" }}>
         <img src={headerImg} alt="headerImg" width={"100%"} height={"100%"} />
         <div className="text position-absolute text-center">
           <p className="mb-2">explore</p>

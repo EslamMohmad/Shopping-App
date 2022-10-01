@@ -12,6 +12,7 @@
 
 .searchSection .search {
   width: 100%;
+  min-height: 55px;
   display: flex;
   border-radius: 5px;
   background-color: white;
@@ -73,4 +74,10 @@
   color: gray;
   text-decoration: line-through;
   font-weight: 700;
+}
+
+@media (max-height: 700px) {
+  .searchSection {
+    height: 100%;
+  }
 }
