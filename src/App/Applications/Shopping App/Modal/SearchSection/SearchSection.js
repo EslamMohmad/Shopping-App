@@ -49,14 +49,14 @@ const SearchSection = ({ data, action, sectionState }) => {
 
   return (
     <div className="searchSection">
-      <form className="h-100 d-flex flex-column">
+      <div className="h-100 d-flex flex-column">
         <div className="search mb-2" onClick={(e) => e.stopPropagation()}>
           <div className="result-icon">
             <Icon prefix={"fa-solid"} icon={"fa-angle-down"} />
           </div>
           <input
             type="text"
-            placeholder="search..."
+            placeholder="search by category ..."
             ref={inputRef}
             focus={`${sectionState}`}
             value={inputValue}
@@ -79,7 +79,7 @@ const SearchSection = ({ data, action, sectionState }) => {
             </div>
           </div>
         ) : null}
-      </form>
+      </div>
     </div>
   );
 };

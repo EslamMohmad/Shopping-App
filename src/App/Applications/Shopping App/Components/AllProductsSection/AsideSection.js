@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -14,52 +14,48 @@ const AsideSection = () => {
     prices: [],
     colors: [],
   };
-
-  const sectionOfTags = useMemo(
-    () => ({
-      category: [
-        "women",
-        "man",
-        "watch",
-        "kids",
-        "sports",
-        "sunglass",
-        "bags",
-        "sneakers",
-      ],
-      brands: [
-        "shovia",
-        "fusion",
-        "hunter shoes",
-        "club shoes",
-        "hoppister",
-        "blaza fashion",
-        "elegance",
-        "fashadil",
-      ],
-      prices: [
-        "under $6",
-        "$6 to $10",
-        "$10 to $15",
-        "$15 to $20",
-        "$20 to $50",
-        "$50 to $100",
-        "$100 to $200",
-        "over $200",
-      ],
-      colorsArr: [
-        "black",
-        "blue",
-        "green",
-        "yellow",
-        "red",
-        "brown",
-        "gray",
-        "white",
-      ],
-    }),
-    []
-  );
+  const sectionOfTags = {
+    category: [
+      "women",
+      "man",
+      "watch",
+      "kids",
+      "sports",
+      "sunglass",
+      "bags",
+      "sneakers",
+    ],
+    brands: [
+      "shovia",
+      "fusion",
+      "hunter shoes",
+      "club shoes",
+      "hoppister",
+      "blaza fashion",
+      "elegance",
+      "fashadil",
+    ],
+    prices: [
+      "under $6",
+      "$6 to $10",
+      "$10 to $15",
+      "$15 to $20",
+      "$20 to $50",
+      "$50 to $100",
+      "$100 to $200",
+      "over $200",
+    ],
+    colors: [
+      "black",
+      "blue",
+      "green",
+      "yellow",
+      "red",
+      "brown",
+      "gray",
+      "white",
+    ],
+  };
 
   const [tags, setTages] = useState(tagsObjectsState);
 
@@ -108,8 +104,8 @@ const AsideSection = () => {
 
   const sectionRender = (array, sectionName) => {
     return array.map((item, index) => (
-      <Link
-        to={item}
+      <div
+        // to={item}
         className="mb-3 d-flex align-items-center parent"
         key={index}
       >
@@ -126,23 +122,9 @@ const AsideSection = () => {
         {sectionName === "colors" && (
           <span className="color mx-2" style={{ backgroundColor: item }}></span>
         )}
-      </Link>
+      </div>
     ));
   };
-
-  // const { "*": sectionName } = useParams();
-
-  // useEffect(() => {
-  //   if (sectionName) {
-  //     const detectTagSection = Object.keys(sectionOfTags).filter((section) =>
-  //       sectionOfTags[section].find((tag) => tag === sectionName)
-  //     );
-  //     setTages((prev) => ({
-  //       ...prev,
-  //       [detectTagSection]: [...prev[detectTagSection], sectionName],
-  //     }));
-  //   }
-  // }, [sectionName, sectionOfTags]);
 
   useEffect(() => {
     action(getFilterdProducts(tags));
@@ -185,7 +167,7 @@ const AsideSection = () => {
       </div>
       <div className="colors border-bottom pb-4">
         <h5 className="mb-4">colors</h5>
-        <div>{sectionRender(sectionOfTags.colorsArr, "colors")}</div>
+        <div>{sectionRender(sectionOfTags.colors, "colors")}</div>
       </div>
     </div>
   );
