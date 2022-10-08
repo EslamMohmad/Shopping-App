@@ -8,15 +8,11 @@ import useCLassRemoveSmoothly from "../../Hooks/useCLassRemoveSmoothly";
 
 const OverLaySection = ({ children, props, action }) => {
   const sectionsRender = () => {
-    for (let prop in props) {
-      if (prop !== "rememberMeState") {
-        const result = Object.keys(props).filter(
-          (prop) => props[prop] === true
-        );
-        result.length = 2;
-        return result.join(" ");
-      }
-    }
+    const result = Object.keys(props).filter((prop) => {
+      return prop !== "rememberMeState" && props[prop] === true;
+    });
+    result.length = 2;
+    return result.join(" ");
   };
 
   const cls = useCLassRemoveSmoothly(

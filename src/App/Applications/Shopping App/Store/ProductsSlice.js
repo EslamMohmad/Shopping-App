@@ -41,6 +41,7 @@ const ProductsSlice = createSlice({
     productViewDetailstState: false,
     productsFilterState: [],
     productsFilterSearchState: [],
+    localStorageDataState: [],
   },
   reducers: {
     increase: (state) => {
@@ -112,8 +113,10 @@ const ProductsSlice = createSlice({
       state.productsFilterState = globalProducts;
     },
     getSearchedProduct: (state, { payload }) => {
-      state.productInfo.product = payload;
+      state.productInfo.product = payload.product;
       state.productViewDetailstState = true;
+      state.productInfo.color = { colorState: false, result: "" };
+      state.productInfo.size = { sizeState: false, result: "" };
     },
   },
 

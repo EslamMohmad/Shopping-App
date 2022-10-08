@@ -25,7 +25,7 @@ const ProductsSection = () => {
 
   useEffect(() => {
     if (!homeState) {
-      dispatch(productData({ state: false, URL: "/DataBase/Data.json" }));
+      dispatch(productData({ state: false, URL: "DataBase/Data.json" }));
       dispatch(getProductDetailsFromURLFunc(product));
     }
   }, [dispatch, homeState, product]);

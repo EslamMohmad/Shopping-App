@@ -17,7 +17,6 @@ import {
 import "./ProductDetails.css";
 
 const ProductDescription = ({ targetDetails }) => {
-  //destructuring from ProductsSlice
   const {
     productInfo: { product, amount, color, size, name },
     addToCartState,
@@ -25,14 +24,12 @@ const ProductDescription = ({ targetDetails }) => {
     productViewDetailstState,
   } = useSelector(({ ProductsSlice }) => ProductsSlice);
 
-  const { productInfoState, cartState } = useSelector(
+  const { productInfoState, cartState, overLayState } = useSelector(
     ({ ModalSlice }) => ModalSlice
   );
 
-  //destructuring from ModalSlice
-
   const { id, title, description, befourSale, afterSale } =
-    targetDetails || product;
+    product || targetDetails;
 
   const action = useDispatch();
 
@@ -45,19 +42,21 @@ const ProductDescription = ({ targetDetails }) => {
     };
 
     return Object.keys(colorsObj).map((color, idx) => (
-      <li key={idx} className={productInfoState || cartState ? null : ""}>
+      <li key={idx} className={overLayState ? null : ""} type="color">
         <span
-          style={{ backgroundColor: colorsObj[color] }}
           onClick={(e) => {
-            [...e.target.parentElement.parentElement.children].forEach(
-              (ele) => (ele.className = "")
-            );
-            e.target.parentElement.className = "active";
+            productSize_ColorHandler(e.target.parentElement);
             action(currentColor(color));
           }}
+          style={{ backgroundColor: colorsObj[color] }}
         ></span>
       </li>
     ));
+  };
+
+  const productSize_ColorHandler = (element) => {
+    [...element.parentElement.children].forEach((e) => (e.className = ""));
+    element.className = "active";
   };
 
   const productSizeHandler = () => {
@@ -69,13 +68,11 @@ const ProductDescription = ({ targetDetails }) => {
     };
     return Object.keys(sizes).map((size, idx) => (
       <li
-        className={productInfoState || cartState ? null : ""}
+        className={overLayState ? null : ""}
+        type="size"
         key={idx}
         onClick={(e) => {
-          [...e.target.parentElement.children].forEach((ele) =>
-            ele.classList.remove("active")
-          );
-          e.target.classList.add("active");
+          productSize_ColorHandler(e.target);
           action(currentSize(size));
         }}
       >
@@ -114,7 +111,7 @@ const ProductDescription = ({ targetDetails }) => {
       </div>
       <div className="color mb-4">
         <p>color</p>
-        <ul className="list-unstyled mb-0">{productColorHandler()}</ul>
+        <ul className="list-unstyled mb-0 ps-0">{productColorHandler()}</ul>
       </div>
       <div className="d-flex productCount gap-3 mb-3 mb-md-4 ">
         <div className="count w-50 d-flex">
@@ -149,7 +146,7 @@ const ProductDescription = ({ targetDetails }) => {
         <button
           className={`view-cart btn btn-light w-100 py-2 border mb-4`}
           onClick={() => {
-            action(overLayFunc());
+            action(overLayFunc({ viewCart: true }));
             action(cartFunc());
           }}
         >
